@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     watch = require('gulp-watch'),
     uglify = require('gulp-uglify'),
     rigger = require('gulp-rigger'),
+    autoprefixer = require('gulp-autoprefixer'),
     cssmin = require('gulp-minify-css'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
@@ -42,7 +43,7 @@ var path = {
         png: 'src/png-icon/*.*',
         svg: 'src/svg-icon/**/*.svg',
         svgImages: 'src/svg-images/**/*.svg',
-        fonts: 'src/fonts/**/*.*'
+        fonts: 'src/fonts/**/*{ttf,woff,woff2,svg,eot}'
     },
     watch: {
         html: 'src/**/*.html',
@@ -79,18 +80,31 @@ gulp.task('html:build', function () {
         .pipe(reload({stream: true}));
 });
 
+gulp.task('fonts:build', function() {
+    gulp.src(path.src.fonts)
+        .pipe(gulp.dest(path.build.fonts))
+});
+
 gulp.task('js:build', function () {
     return browserify(path.src.js)
         .bundle()
-        //.pipe(uglify())
         .pipe(source(path.build.jsFile))
         .pipe(gulp.dest(path.build.js));
+});
+
+gulp.task('js-mini:build', function(){
+    gulp.src(path.build.js+'*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest(path.build.js))
 });
 
 gulp.task('style:build', function() {
     gulp.src(path.src.style)
         .pipe(sass().on('error', sass.logError))
         .pipe(sourceMaps.init({ loadMaps : true }))
+        .pipe(autoprefixer("last 2 version", "> 1%", "Explorer >= 8", {
+            cascade: true
+        }))
         .pipe(cssmin())
         .pipe(sourceMaps.write(path.build.cssMapDir))
         .pipe(gulp.dest(path.build.css))
@@ -177,6 +191,7 @@ gulp.task('svgImages:build', function () {
 
 gulp.task('build', [
     'html:build',
+    'fonts:build',
     'js:build',
     'style:build',
     'fonts:build',
@@ -197,6 +212,7 @@ gulp.task('watch', function(){
     watch([path.watch.js], function(event, cb) {
         gulp.start('js:build');
     });
+
     watch([path.watch.img], function(event, cb) {
         gulp.start('image:build');
     });

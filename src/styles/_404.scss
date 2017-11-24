@@ -1,0 +1,15 @@
+.c-404 {
+  background-image: url('/images/fon404.jpg');
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size:contain;
+  overflow: hidden;
+  &__text {
+    text-align: center;
+    vertical-align: 100vh;
+    line-height: 100vh;
+    color:#fff;
+    font-weight: 900;
+    @include fluidFontSize(85px, 300px, 480px, 1280px, 100px);
+  }
+}
