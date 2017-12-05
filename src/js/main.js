@@ -4,7 +4,8 @@ require('fullpage.js');
 jQuery(function(){
     var $ = jQuery;
     $(document).ready(function() {
-        $('#fullpage').fullpage();
+        //= my/fullPageInit.js
+        //= my/animated.js
     });
-    require('./my/fullPageInit.js');
+
 });

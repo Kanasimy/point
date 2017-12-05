@@ -38,6 +38,7 @@ var path = {
     src: {
         html: 'src/*.html',
         js: 'src/js/main.js',
+        jsTmp: 'src/jsTmp/',
         style: 'src/styles/*.scss',
         img: 'src/images/**/*.*',
         png: 'src/png-icon/*.*',
@@ -52,7 +53,9 @@ var path = {
         img: 'src/images/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
-    clean: './build'
+    clean: {build:'./build', tmp: './src/jsTmp'}
+
+
 };
 
 var config = {
@@ -61,7 +64,7 @@ var config = {
     },
     tunnel: true,
     host: 'localhost',
-    port: 9000,
+    port: 4000,
     logPrefix: "olga_yuzich"
 };
 
@@ -70,7 +73,8 @@ gulp.task('webserver', function () {
 });
 
 gulp.task('clean', function (cb) {
-    rimraf(path.clean, cb);
+    rimraf(path.clean.build, cb);
+    rimraf(path.clean.tmp, cb);
 });
 
 gulp.task('html:build', function () {
@@ -85,8 +89,14 @@ gulp.task('fonts:build', function() {
         .pipe(gulp.dest(path.build.fonts))
 });
 
+gulp.task('js:tmp', function(){
+    gulp.src(path.src.js)
+        .pipe(rigger())
+        .pipe(gulp.dest(path.src.jsTmp))
+});
+
 gulp.task('js:build', function () {
-    return browserify(path.src.js)
+    return browserify(path.src.jsTmp+'main.js')
         .bundle()
         .pipe(source(path.build.jsFile))
         .pipe(gulp.dest(path.build.js));
@@ -192,6 +202,7 @@ gulp.task('svgImages:build', function () {
 gulp.task('build', [
     'html:build',
     'fonts:build',
+    'js:tmp',
     'js:build',
     'style:build',
     'fonts:build',
@@ -210,6 +221,7 @@ gulp.task('watch', function(){
         gulp.start('style:build');
     });
     watch([path.watch.js], function(event, cb) {
+        gulp.start('js:tmp');
         gulp.start('js:build');
     });
 

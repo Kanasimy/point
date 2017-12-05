@@ -8,3 +8,38 @@
     cursor:pointer;
   }
 }
+
+.icon-go-top {
+  @include sprite($go-top);
+  display:inline-block;
+  position:absolute;
+  right:30px;
+  transform: scale(1);
+  top:2px;
+  z-index: 10;
+}
+
+.icon-arrow {
+  @include sprite($arrow);
+  display:inline-block;
+  animation-duration: 3s;
+  margin-left: 1rem;
+  vertical-align: middle;
+}
+
+.icon-point {
+  @include sprite($point);
+  display:inline-block;
+}
+
+.active .icon-point {
+  @include sprite($point_);
+  display:inline-block;
+}
+
+
+
+.active .icon-line {
+  @include sprite($line_);
+  display:inline-block;
+}

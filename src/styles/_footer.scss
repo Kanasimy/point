@@ -1,0 +1,47 @@
+.c-footer {
+  background-color: $blue;
+  text-align: center;
+  position: relative;
+  &__brif {
+
+  }
+  &__head {
+    font-weight: 900;
+    color:$head-background;
+    font-size: px-to-rem(120);
+    position: absolute;
+    top:50%;
+    margin-top: - px-to-rem(151);
+    left:0;
+    right:0;
+    text-transform:uppercase;
+  }
+  &__link {
+    font-size: px-to-rem(30);
+    line-height: px-to-rem(44);
+    color: #fff;
+    position: absolute;
+    top:50%;
+    margin-top: - px-to-rem(133);
+    left:0;
+    right:0;
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  &__line {
+    background: #fff;
+    line-height: px-to-rem(110);
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  &__p {
+    font-size: px-to-rem(20);
+    line-height: px-to-rem(110);
+    color: $blue;
+  }
+}

@@ -1,3 +1,7 @@
+html{
+  font-size: $font-size-base;
+}
+
 @font-face {
   font-family: 'DINPro';
   src: url('../fonts/DINPro.eot');
@@ -20,6 +24,9 @@
   font-style: normal;
 }
 
+@function px-to-rem($px){
+  @return ($px/$font-base) + rem;
+}
 
 @function strip-unit($number) {
   @if type-of($number) == 'number' and not unitless($number) {
@@ -58,3 +65,7 @@
   }
 }
 
+@media (max-width: $screen-xs-max) { body { font-size: 115%;} }
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {body {font-size: 100%;}}
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {body {font-size: 100%;}}
+@media (min-width: $screen-lg-min) { body {font-size: 125%;} }
