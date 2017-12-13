@@ -2,6 +2,7 @@ $('.js-menu').hide();
 $('#fullpage').fullpage({
     anchors: ['firstSection', 'secondSection', 'thirdSection', 'fourthSection','fifthSection', 'sixSection'],
     menu: '.js-menu',
+    dragAndMove: true,
     onLeave: function(anchorLink, index){
         var loadedSection = $(this);
 

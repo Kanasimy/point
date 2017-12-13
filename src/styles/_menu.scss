@@ -42,3 +42,34 @@
       top: 0.7rem;
     }
   }
+
+@media (max-width: $screen-xs-max) {
+  .icon-point {
+    transform: scale(0.6);
+  }
+  .c-menu {z-index: 0}
+  .active .c-menu__link {
+    opacity: 0;
+  }
+  .c-menu__point {
+    right: 15px;
+  }
+  .active .c-menu__line {
+    display: none
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .active .c-menu__link {
+    opacity: 0
+  }
+  .c-menu {z-index: 0}
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+
+}
+
+@media (min-width: $screen-lg-min) {
+
+}

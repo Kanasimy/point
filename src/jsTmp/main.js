@@ -8,6 +8,7 @@ jQuery(function(){
         $('#fullpage').fullpage({
             anchors: ['firstSection', 'secondSection', 'thirdSection', 'fourthSection','fifthSection', 'sixSection'],
             menu: '.js-menu',
+            dragAndMove: true,
             onLeave: function(anchorLink, index){
                 var loadedSection = $(this);
         
@@ -37,7 +38,16 @@ jQuery(function(){
                 function() {
                     $(this).find('.animated').removeClass('shake'); // Убираем класс
                 }
-            )
+            );
+        
+        $('.js-proekt').hover(
+            function() {
+            $(this).parents('.c-portfolio__body').addClass('hover');
+        },
+            function() {
+                $(this).parents('.c-portfolio__body').removeClass('hover');
+        }
+        );
     });
 
 });

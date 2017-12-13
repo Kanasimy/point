@@ -10,40 +10,25 @@
     <link rel="stylesheet" href="css/layout.css">
 </head>
 <body>
-//= ./menu.html
+//= menu.html
 <main id="fullpage" class="c-portfolio">
-    <section class="section">
-        <header id="header" class="head">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="l-head__logo"></div>
-                <div class="l-head__menu"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-5">
-                <img src="/images/logo.png" alt="Точка Росы. Рекламная студия">
-            </div>
-            <div class="col-sm-7">
-                <div class="l-head__about">
-                    <p class="l-head__p">Привет. Мы — Точка Росы.
+    <section  class="l-head section">
+        <div class="l-head-left">
+        //= ../svg-images/main-left.html
+        //= main-menu.html
+            <div class="l-head__about">
+                <p class="l-head__p">Привет. Мы — Точка Росы.
                     Делаем рекламу, создаем бренды,
                     рисуем дизайн и сайты, снимаем ролики.</p>
 
-                    <p class="l-head__p">Мы помогаем бизнесу становится лучше и сильнее,
+                <p class="l-head__p">Мы помогаем бизнесу становится лучше и сильнее,
                     поэтому тщательно работаем над идеями.</p>
-                    <p><a class="l-head__link" href="">Подробнее о нас</a></p>
-                </div>
+                <p><a class="l-head__link" href="">Подробнее о нас</a></p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <a class="l-head__link-more" href="">
-                    Избранные проекты
-                </a>
-            </div>
+        <div class="l-head-right">
+            <img class="l-head__fon" src="images/fon-top-right.png" alt="">
+            //= ./small-menu.html
         </div>
-    </div>
-</header>
+        <a href="#secondSection" class="bottom-href"><i class="icon-bottom_"></i> Избранные проекты</a>
     </section>

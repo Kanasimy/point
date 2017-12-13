@@ -65,7 +65,7 @@ html{
   }
 }
 
-@media (max-width: $screen-xs-max) { body { font-size: 115%;} }
+@media (max-width: $screen-xs-max) { body { font-size: 100%;} }
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {body {font-size: 100%;}}
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {body {font-size: 100%;}}
 @media (min-width: $screen-lg-min) { body {font-size: 125%;} }

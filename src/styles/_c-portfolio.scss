@@ -1,110 +1,336 @@
-.c-portfolio{
+.c-portfolio {
   z-index: 1;
-  &__image {@include clearfix;}
+  &__image {
+    @include clearfix;
+    display: inline-block;
+    position:relative;
+    width: 100%;
+  }
   .img-responsive {
     max-height: 80vh;
     max-width: 45vw;
   }
-  &__body{position:relative;}
+  &__body {
+    position: relative;
+    cursor: pointer;
+  }
   &-wrap {
-    position:absolute;
+    position: absolute;
     right: 0;
     left: 0;
   }
-  &__svg{
+  &__svg {
     max-height: 60vh;
     max-width: 35vw;
-    position:absolute;
+    position: absolute;
     z-index: 1;
     top: 50%;
     transform: translateY(-50%);
   }
+
+}
+
+@keyframes t-hover {sssss
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+
+  21% {
+    transform: scale(1.05, 0.995);
+  }
+
+  50% {
+    transform: scale(0.99, 1.02);
+  }
+}
+
+@keyframes t-arrow {
+  0% {;
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(-0.5rem)
+  }
+
+  55% {
+    transform: translateY(-0.5rem)
+  }
+
+  100% {
+    transform: translateY(0)
+  }
 }
 
 .c-portfolio__teplica {
-   .c-portfolio{
-     &__svg{
-       right: 10rem;
-       //transform: rotate(-10deg) translate(-30px,42px);
-     }
-     &__name{
-       z-index: 10;
-       color:red;
-     }
-   }
- }
-
-.c-portfolio__sunturini {
-  .c-portfolio{
-    &__svg{
-      left: 0rem;
-      //transform: rotate(-10deg) translate(-30px,42px);
-    }
-    &__name{
+  .teplica-cls-2, .teplica-cls-2_0, .teplica-cls-2_1, .teplica-cls-2_3, .teplica-cls-2_2 {
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+  }
+  .c-portfolio {
+    &__svg {
+      right: 10rem;
+      top: 65%;
       z-index: 10;
-      color:red;
+    }
+    &__cat {
+      vertical-align: middle;
+      position:absolute;
+      left: 45%;
+      top: 25%;
+      transition-property: left;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+      z-index: 100;
+    }
+    &__line {
+      display: inline-block;
+      vertical-align: middle;
+      width:15vw;
+      background: $yellow;
+      height:2px;
+      transition-property: width;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+    }
+
+    &__body.hover {
+      .teplica-cls-2 {
+        transform: rotate(-9.2deg) translate(-31px,37px);
+        animation: t-hover 1.7s infinite ease;
+      }
+      .teplica-cls-2_0,  .teplica-cls-2_3{transform: translate(10px, -5px);}
+      .teplica-cls-2_2 {transform: translate(-10px);}
+      .teplica-cls-2_1 {transform: translate(-10px);}
+      .c-portfolio__cat {
+        position:absolute;
+        left: 50%;
+        top: 25%;
+      }
+      .c-portfolio__line {
+        width:15vw;
+        background: $yellow;
+        height:2px;
+      }
     }
   }
+}
+
+.c-portfolio__sunturini {
+  .sunturini-cls-1_1, .sunturini-cls-2, .sunturini-cls-1_0, .sunturini-cls-1_2, .sunturini-cls-1 {
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+  }
+  .c-portfolio {
+    &__svg {
+      left: 0rem;
+      z-index: 10;
+    }
+    &__cat {
+      vertical-align: middle;
+      position:absolute;
+      left: 0%;
+      top: 15%;
+      transition-property: left;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+      z-index: 100;
+    }
+    &__line {
+      display: inline-block;
+      vertical-align: middle;
+      width:15vw;
+      background: $blue;
+      height:2px;
+      transition-property: width;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+    }
+
+    &__body.hover {
+      .sunturini-cls-1_1 {
+        transform: rotate(9.2deg) translate(31px,-20px);
+        animation: t-hover 1.7s infinite ease;
+      }
+      .sunturini-cls-2,  .sunturini-cls-1{transform: translate(10px, -5px);}
+      .sunturini-cls-1_0 {transform: translate(-10px);}
+      .sunturini-cls-1_2 {transform: translate(-10px);}
+      .c-portfolio__cat {
+        left: -5%;
+      }
+      .c-portfolio__line {
+        width:15vw;
+        background: $blue;
+        height:2px;
+      }
+    }
+  }
+
   .img-responsive {
-    float:right;
+    float: right;
     margin-right: 7em;
   }
 }
 
 .c-portfolio__eantonova {
-  .c-portfolio{
-    &__svg{
+  .eantonova-cls-2,.eantonova-cls-2_0, .eantonova-cls-2_1, .eantonova-cls-2_2, .eantonova-cls-2_3  {
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+  }
+  .c-portfolio {
+    &__svg {
       right: 13rem;
-      //transform: rotate(-10deg) translate(-30px,42px);
     }
-    &__name{
-      z-index: 10;
-      color:red;
+    &__cat {
+      width:100%;
+      vertical-align: middle;
+      position:absolute;
+      left: 45%;
+      top: 18%;
+      transition-property: left;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+      z-index: 100;
+    }
+    &__line {
+      display: inline-block;
+      vertical-align: middle;
+      width:15vw;
+      background: $yellow;
+      height:2px;
+      transition-property: width;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+    }
+
+    &__body.hover {
+      .eantonova-cls-2_2 {
+        transform: rotate(-9.2deg) translate(-39px,45px);
+       animation: t-hover 1.7s infinite ease;
+      }
+      .eantonova-cls-2_3,  .eantonova-cls-2_1 {transform: translate(10px, -5px)}
+      .eantonova-cls-2_0, .eantonova-cls-2 {transform: translate(-10px)}
+
+      .c-portfolio__cat {
+        position:absolute;
+        left: 50%;
+      }
+      .c-portfolio__line {
+        width:15vw;
+        background: $yellow;
+        height:2px;
+      }
     }
   }
 }
 
 .c-portfolio__2gis {
-  .c-portfolio{
-    &__svg{
-      left: 0rem;
-      //transform: rotate(-10deg) translate(-30px,42px);
+  .c-portfolio {
+    .gis-cls-1, .gis-cls-1_1, .gis-cls-1_0, .gis-cls-1_2 {
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
     }
-    &__name{
-      z-index: 10;
-      color:red;
+  &__svg {
+      left: 0rem;
+    }
+    &__cat {
+      vertical-align: middle;
+      position:absolute;
+      left: 0%;
+      top: 15%;
+      transition-property: left;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+      z-index: 100;
+    }
+    &__line {
+      display: inline-block;
+      vertical-align: middle;
+      width:15vw;
+      background: $blue;
+      height:2px;
+      transition-property: width;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+    }
+
+    &__body.hover {
+      .gis-cls-1 {
+        transform: rotate(9.2deg) translate(32px,-33px);
+        animation: t-hover 1.7s infinite ease;
+      }
+      .gis-cls-1_1, .gis-cls-1_3{transform: translate(10px, -5px);}
+      .gis-cls-1_0 {transform: translate(-10px);}
+      .gis-cls-1_2 {transform: translate(-10px);}
+      .c-portfolio__cat {
+        left: -5%;
+      }
+      .c-portfolio__line {
+        width:15vw;
+        background: $blue;
+        height:2px;
+      }
     }
   }
   .img-responsive {
-    float:right;
+    float: right;
     margin-right: 7em;
   }
 }
 
+.bottom-href {
+  &.move{animation: t-arrow 1.7s infinite ease;}
+  position: absolute;
+  bottom: 2rem;
+  left:0;
+  right:0;
+  text-align: center;
+  color:$blue;
+  font-size: px-to-rem(21);
+  text-decoration: none;
+  text-transform: uppercase;
+  &:hover {text-decoration: none;}
+}
+
+.top-href {
+  &.move{animation: t-arrow 1.7s infinite ease;}
+  position: absolute;
+  top: 2rem;
+  left:0;
+  right:0;
+  text-align: center;
+  text-decoration: none;
+  &:hover {text-decoration: none;}
+}
+
+
+
 @media (max-width: $screen-xs-max) {
-  .icon-point{transform: scale(0.6);}
   .c-portfolio__svg {
-    max-width: 52vw;}
-  .active .c-menu__link {opacity:0}
+    max-width: 52vw;
+  }
   .c-portfolio__2gis .img-responsive, .c-portfolio__sunturini .img-responsive {
     margin-right: 3rem;
   }
-  .c-portfolio__teplica .c-portfolio__svg, .c-portfolio__eantonova .c-portfolio__svg  {
+  .c-portfolio__teplica .c-portfolio__svg, .c-portfolio__eantonova .c-portfolio__svg {
     right: 30px;
   }
-  .c-menu__point {
-    right: 15px;}
-  .active .c-menu__line {display: none}
+
 }
+
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-  .active .c-menu__link {opacity:0}
-  .c-portfolio__2gis .img-responsive, .c-portfolio__sunturini .img-responsive {
+  .c-portfolio__2gis .img-responsive, .c-portfolio__sunturini .img-responsive, .c-portfolio__eantonova .c-portfolio__svg, .c-portfolio__teplica .c-portfolio__svg {
     margin-right: 3rem;
   }
+  .c-portfolio__teplica .c-portfolio__svg, .c-portfolio__eantonova .c-portfolio__svg {
+    right: 0;
+  }
 }
+
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
 
 }
+
 @media (min-width: $screen-lg-min) {
 
 }

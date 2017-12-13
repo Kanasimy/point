@@ -1,0 +1,32 @@
+.l-head {
+  position: relative;
+  height:100vh;
+  .container {z-index:100;}
+  &__fon {
+    width: 100%;
+    z-index:0;
+  }
+  &__about{
+    position: absolute;
+    top: 37%;
+    left: 100%;
+    width: 100%;
+    padding: 0 20% 0 0;
+  }
+}
+
+.l-head-left {
+  width: 54%;
+  max-width: 693px;
+  position: absolute;
+  top: 0;
+  z-index: 20;
+}
+.l-head-right {
+  width: 46%;
+  max-width: 591px;
+  position: absolute;
+  top: 0;
+  right:0;
+  z-index: 10;
+}

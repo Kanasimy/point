@@ -1,11 +1,20 @@
 @import "customVariables";
+
+@media (max-width: $screen-xs-max) { }
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {}
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {}
+@media (min-width: $screen-lg-min) {  }
+
 @import "vendor";
 @import "fonts";
 @import "404";
+@import "header-main";
+@import "main-menu";
 @import "footer";
 @import "sprite";
 @import "spritePng";
 @import "icon";
 @import "menu";
+@import "small-menu";
 @import "c-portfolio";
 @import "decor";

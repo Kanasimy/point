@@ -37,9 +37,26 @@
   display:inline-block;
 }
 
-
-
 .active .icon-line {
   @include sprite($line_);
   display:inline-block;
+}
+
+.active .icon-drop {
+  &-blue {@include sprite($drop_blue);}
+  &-black {@include sprite($drop_black);}
+  &-yellow {@include sprite($drop_yellow);}
+}
+.icon{
+  &-bottom_{@include sprite($bottom_); display: inline-block;}
+  &-bottom{@include sprite($bottom); display: inline-block;}
+
+  &-top_{@include sprite($top_); display: inline-block;}
+  &-top{@include sprite($top); display: inline-block;}
+}
+
+.c-portfolio__slash{
+  @include sprite($slash);
+  transform: translateY(34%);
+  display: inline-block;
 }
