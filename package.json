@@ -11,6 +11,7 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "aos": "^2.2.0",
+    "autosize": "^4.0.0",
     "browser-sync": "^2.2.3",
     "fullpage": "^1.4.2",
     "fullpage.js": "^2.9.5",
@@ -27,9 +28,12 @@
     "gulp-watch": "^4.1.1",
     "gulp.spritesmith": "^6.4.0",
     "imagemin-pngquant": "^4.0.0",
+    "jelly.js": "0.0.7",
     "jquery.easing": "^1.4.1",
     "rimraf": "^2.3.1",
-    "underscore": "^1.8.3"
+    "typed.js": "^2.0.6",
+    "underscore": "^1.8.3",
+    "wowjs": "^1.1.3"
   },
   "devDependencies": {
     "bootstrap-sass": "latest",

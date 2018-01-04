@@ -1,0 +1,84 @@
+.c-projects{
+  z-index: 10;
+  position:relative;
+
+  &__page-header__text{
+    right:0%;
+    top:-8rem;
+  }
+  &__wrapper {
+  text-align: center;
+    overflow: hidden
+  }
+  &__item{
+    overflow: hidden;
+    position:relative;
+    margin: $grid-gutter-width/2 auto;
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    &:hover {
+      .c-projects__name, .c-projects__tag {text-decoration: none;
+        color: black;
+        text-decoration: none;
+      }
+  }
+  }
+  &__hover {
+    opacity: 0;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    background-color: fade-out($blue,.23);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+  }
+  &__text {
+    text-align: center;
+  }
+
+  &__name {
+    text-transform: uppercase;
+    font-size: px-to-rem(30);
+  }
+  &__tag {
+    font-size: px-to-rem(18);
+  }
+
+  &__1 {
+    cursor: url(../images/povar.png), pointer;
+  }
+  &__2 {
+    cursor:  pointer;
+    cursor: url('../images/plane.png'), pointer;
+  }
+  &__3 {
+    cursor:  pointer;
+    cursor: url('../images/phone.png'), pointer;
+  }
+  &__4 {
+    cursor:  pointer;
+    cursor: url('../images/student.png') 2 2, pointer;
+  }
+  &__5 {
+
+  }
+  &__6 {
+    cursor:  pointer;
+    cursor: url('../images/ice.png') 2 2, pointer;
+  }
+  &__7 {
+    cursor:  pointer;
+    cursor: url('../images/tablet.png') 2 2, pointer;
+  }
+  &__8 {
+
+  }
+
+}

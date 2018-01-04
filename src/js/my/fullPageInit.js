@@ -15,7 +15,11 @@ $('#fullpage').fullpage({
         else if(index == 6){
             $('.js-menu').hide();
             // animated
-            $('.c-footer__head, .c-footer__link').addClass('animated');
+
+                $('.c-footer__link').addClass('animated slideInLeft slideInUp');
+                $('.c-footer__head').addClass('animated slideInRight slideInDown');
+
+
         }
         else {
             $('.js-menu').show();

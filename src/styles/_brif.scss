@@ -1,0 +1,96 @@
+.js-typed{display:none;}
+.c-brif {
+  z-index: 100;
+  position: relative;
+
+  &__text {
+    font-size: px-to-rem(37);
+  }
+  &__input {
+    font-size: px-to-rem(37);
+    outline:none;
+    border:none;
+    background: none;
+    opacity:0;
+    &-name{
+      width: 18.5rem;
+    }
+    &-target{
+      width:18.3rem;
+      height: 3rem;
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: top;
+      white-space: pre-line;
+    }
+    &-company{
+      width: 16.5rem;
+    }
+    &-email{
+      width: 11.5rem;
+    }
+    &-decor{
+      color: $orange;
+      &:active {outline:none;}
+      &::-webkit-input-placeholder {color: $orange;}
+      &::-moz-placeholder          {color: $orange;}
+      &:-moz-placeholder           {color: $orange;}
+      &:-ms-input-placeholder      {color: $orange;}
+      border-bottom:1px dashed;
+      opacity:1;
+    }
+  }
+  &__buffer{
+    font-size: px-to-rem(37);
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    visibility: hidden;
+    white-space: nowrap;
+    display:inline-block;
+    opacity: 0;
+
+  }
+
+  &__thanks {
+    display: none;
+  }
+
+  &__submit{
+    display:none;
+    color:#fff;
+    background-color: $yellow;
+    border-radius: 2rem;
+    border:none;
+    padding: 0.5rem 1rem;
+    font-size: px-to-rem(24);
+    margin-bottom: 0;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    text-decoration: none;
+    vertical-align: middle;
+    &:hover{
+      background-color: darken($yellow, 6.5%);
+      outline: none;
+    }
+    &:active {
+      outline: none;
+    }
+  }
+}
+
+.c-brif__textarea {
+  position:relative;
+  display: inline-block;
+  .c-brif__buffer {
+    white-space: pre-line;
+  }
+}

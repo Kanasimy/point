@@ -1,0 +1,29 @@
+.l-head-line {
+  height:10vw;
+  .container {z-index:100;}
+  &__fon {
+    width: 100%;
+    z-index:0;
+  }
+}
+
+.l-head-line-left {
+  width: 33%;
+  padding-bottom:60%;
+  max-width: 449px;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  .l-head-line__fon {
+    height: 100%;
+    position: absolute;
+  }
+}
+.l-head-line-right {
+  width: 16%;
+  max-width: 198px;
+  position: absolute;
+  top: 0;
+  right:0;
+  z-index: 10;
+}

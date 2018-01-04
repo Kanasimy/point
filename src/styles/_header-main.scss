@@ -17,10 +17,15 @@
 
 .l-head-left {
   width: 54%;
+  padding-bottom: 45%;
   max-width: 693px;
   position: absolute;
   top: 0;
   z-index: 20;
+  .l-head__fon {
+    height: 100%;
+    position: absolute;
+  }
 }
 .l-head-right {
   width: 46%;

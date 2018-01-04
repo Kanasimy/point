@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script
+                src="https://code.jquery.com/jquery-2.2.4.js"
+                integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+</head>
+<body>
+
+
+<svg id="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 30">
+        <defs><clipPath id="myClip"><path d="M6.03 19.13s40.7-10.39 77.94-7.79L6.03 19.13zm0 0z" fill="f5e000"/></clipPath></defs>
+        <path d="M6.03 19.13s40.7-10.39 77.94-7.79M6.03 19.13z" fill="none" stroke="#f5e000" stroke-width="6" stroke-linecap="round" clip-path="url(#myClip)" />
+</svg>
+<script type="text/javascript">
+    var paths = $('path:not(defs path)');
+    paths.each(function(i, e) {
+        e.style.strokeDasharray = e.style.strokeDashoffset = e.getTotalLength();
+    });
+    var tl = new TimelineMax();
+    tl.add([
+        TweenLite.to(paths.eq(0), 2, {strokeDashoffset: 0, delay: 1})
+    ]);
+</script>
+</body>
+</html>

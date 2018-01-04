@@ -1,4 +1,5 @@
-.l-head__small-menu {
+
+.small-menu {
   position: absolute;
   top:1%;
   right:35%;
@@ -32,3 +33,5 @@
     text-decoration: none;
   }
 }
+
+.small-menu-line {left:-70px; right:auto}

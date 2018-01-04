@@ -1,0 +1,62 @@
+.slide-menu {
+  display:none;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background-image: url('../images/fon.jpg');
+  background-color: #fff;
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size:contain;
+  overflow: hidden;
+  z-index:100;
+  &__close {
+    position: absolute;
+    right:20%;
+    top:20%;
+  }
+  &__wrapper{
+    padding:0;
+    margin:0;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    .slide-menu__item {
+      text-align: center;
+      width:100%;
+      display:block;
+    }
+  }
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    color:#fff;
+    text-transform: uppercase;
+    @include fluidFontSize(25px, 35px, 480px, 1280px, 30px);
+    line-height: 2.5;
+    &:hover {
+    text-decoration: none;
+      color:#fff;}
+  }
+  &__social{
+    margin:0;
+    position: absolute;
+    right:50%;
+    bottom:4%;
+    background: $orange;
+    border-radius: 21px;
+    height:38px;
+    padding: 0.5rem;
+    transform: translateX(50%);
+    .slide-menu__item {
+      display:inline-block;
+      line-height: 1;
+
+    }
+  }
+}

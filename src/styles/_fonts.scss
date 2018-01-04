@@ -65,6 +65,19 @@ html{
   }
 }
 
+.big-header {
+  position: relative;
+  &__text{
+    position:absolute;
+    white-space: nowrap;
+    z-index: 0;
+    color:$blue-light;
+    font-size: px-to-rem(130);
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+}
+
 @media (max-width: $screen-xs-max) { body { font-size: 100%;} }
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {body {font-size: 100%;}}
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {body {font-size: 100%;}}

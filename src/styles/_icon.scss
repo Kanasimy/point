@@ -17,6 +17,10 @@
   transform: scale(1);
   top:2px;
   z-index: 10;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .icon-arrow {
@@ -42,7 +46,7 @@
   display:inline-block;
 }
 
-.active .icon-drop {
+.icon-drop {
   &-blue {@include sprite($drop_blue);}
   &-black {@include sprite($drop_black);}
   &-yellow {@include sprite($drop_yellow);}
@@ -58,5 +62,56 @@
 .c-portfolio__slash{
   @include sprite($slash);
   transform: translateY(34%);
+  display: inline-block;
+}
+
+.icon-close {
+  @include sprite($close);
+  display: inline-block;
+  position: absolute;
+  top: 4%;
+  right: 18%;
+  cursor: pointer;
+}
+
+.icon-social {
+  &-br {
+    @include sprite($br);display: inline-block;
+  }
+  &-f {
+    @include sprite($f);display: inline-block;
+  }
+  &-tw {
+    @include sprite($tw);display: inline-block;
+  }
+  &-inst {
+    @include sprite($inst);display: inline-block;
+  }
+}
+
+.icon-phone {
+  @include sprite($phone-contact);
+  display: inline-block;
+  margin-right:24px;
+}
+.icon-plane {
+  @include sprite($plane);
+  display: inline-block;
+}
+.icon-marker {
+  @include sprite($mark);
+  margin-right:24px;
+  display: inline-block;
+}
+
+.icon-lamp {
+  @include sprite($lamp);
+  margin-right:24px;
+  display: inline-block;
+}
+
+.icon-pencil {
+  @include sprite($pen);
+  margin-right:24px;
   display: inline-block;
 }

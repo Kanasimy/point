@@ -225,19 +225,23 @@
 }
 
 .c-portfolio__2gis {
+  .gis-cls-1, .gis-cls-1_0, .gis-cls-1_2 {
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+  }
+  .gis-cls-1_1, .gis-cls-1_3 {
+    transition-duration: 0.6s;
+  }
   .c-portfolio {
-    .gis-cls-1, .gis-cls-1_1, .gis-cls-1_0, .gis-cls-1_2 {
-      transition-duration: 0.2s;
-      transition-timing-function: ease-in-out;
-    }
   &__svg {
       left: 0rem;
+    top:59%;
     }
     &__cat {
       vertical-align: middle;
       position:absolute;
-      left: 0%;
-      top: 15%;
+      left: 10%;
+      top: 18%;
       transition-property: left;
       transition-duration: 0.2s;
       transition-timing-function: ease-in-out;
@@ -259,11 +263,11 @@
         transform: rotate(9.2deg) translate(32px,-33px);
         animation: t-hover 1.7s infinite ease;
       }
-      .gis-cls-1_1, .gis-cls-1_3{transform: translate(10px, -5px);}
+      .gis-cls-1_1, .gis-cls-1_3{transform: translate(55px,23px);}
       .gis-cls-1_0 {transform: translate(-10px);}
       .gis-cls-1_2 {transform: translate(-10px);}
       .c-portfolio__cat {
-        left: -5%;
+        left: 5%;
       }
       .c-portfolio__line {
         width:15vw;

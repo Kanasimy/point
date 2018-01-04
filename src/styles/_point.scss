@@ -1,0 +1,40 @@
+.c-about {
+  &__icon{
+    position:absolute;
+  }
+}
+.point{
+  margin-bottom:10rem;
+
+  &__yellow-line{
+    right: 0;
+    top: 4rem;
+  }
+  &__block {
+    background: #fff;
+    position: relative;
+  }
+  &__page-header {
+    left:22%;
+    top:-6rem;
+  }
+}
+
+.do{
+  margin-bottom:10rem;
+  &__icon{
+    position:absolute;
+  }
+  &__yellow-line{
+    right: 0;
+    top: 4rem;
+  }
+  &__block {
+    background: #fff;
+    position: relative;
+  }
+  &__page-header {
+    left:22%;
+    top:-8rem;
+  }
+}
