@@ -1,7 +1,7 @@
-/**intensive от 1 до 10**/
+/**интенсивность от 1 до 10**/
 function paralax(selector, intensive) {
+    if(typeof paralaxcontainer === "undefined") return false;
     var paralax = paralaxcontainer.querySelectorAll(selector),
-        maxMove = paralaxcontainer.offsetWidth / 30,
         fluidparalax = window.matchMedia("(min-width: 726px)"),
         x = intensive;
 
@@ -29,7 +29,6 @@ function paralax(selector, intensive) {
             var distX = mousePos.x - paralaxCenterX[i];
             var distY = mousePos.y - paralaxCenterY[i];
             if (fluidparalax.matches) {
-                debugger;
                 paralax[i].style.transform = "translate("+(-1*distX)*x/40+"px,"+(-1*distY)*x/40+"px)";
             }
 

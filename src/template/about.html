@@ -1,8 +1,8 @@
-<main id="main" class="c-about">
+<main id="main">
     <div class="container">
 <section class="point">
     <div class="big-header">
-        <h2 class="point__page-header big-header__text">МЫ — ТОЧКА РОСЫ</h2>
+        <h2 class="point__page-header big-header__text js-animated-head" style="opacity: 1; transform: translate3d(0px, 0px, 0px);">МЫ — ТОЧКА РОСЫ</h2>
     </div>
     <div class="row">
         <div class="col-sm-5 col-sm-offset-1">
@@ -10,16 +10,14 @@
                 <h3 class="point__head">Любим рекламу и
                     занимаемся ей
                     с 2014 года.
+                    <svg class="point__head-line js-draw" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 30">
+                        <defs><clipPath id="myClip"><path d="M6.03 19.13s40.7-10.39 77.94-7.79L6.03 19.13zm0 0z" fill="f5e000"/></clipPath></defs>
+                        <path d="M6.03 19.13s40.7-10.39 77.94-7.79M6.03 19.13z" fill="none" stroke="#f5e000" stroke-width="6" stroke-linecap="round" clip-path="url(#myClip)" />
+                    </svg>
                 </h3>
-                <svg class="c-about__icon point__yellow-line"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="90px" height="10px">
-                    <path fill-rule="evenodd"  fill="rgb(245, 224, 0)"
-                          d="M-0.000,10.000 C-0.000,10.000 47.000,-2.000 90.000,1.000 "/>
-                </svg>
-                <div class="point__text">
-                    <i class="icon-pen c-about__icon"></i>
+
+                <div class="point__text slideInLeftMy js-animated js-scroll animated" data-wow-delay="0.1s" data-wow-duration="2s">
+                    <i class="icon-pencil c-about__icon"></i>
                     <i class="icon-lamp c-about__icon"></i>
                     <p>Родились в Новосибирске, поэтому
                         по-сибирски мы создаем сильные бренды,
@@ -29,40 +27,44 @@
                     Уверены, таких брендов
                     будет все больше и мы лично приложим
                     к этому руку.
-                    <svg class="line-1 blue c-about__icon"
+                    <svg class="point__text-line c-about__icon js-draw"
                          xmlns="http://www.w3.org/2000/svg"
-                         xmlns:xlink="http://www.w3.org/1999/xlink"
                          width="85px" height="11px">
-                        <path fill-rule="evenodd"  fill="rgb(0, 192, 223)"
-                              d="M-0.000,-0.000 C-0.000,-0.000 65.000,5.000 85.000,-0.000 "/>
-                        <path fill-rule="evenodd"  fill="rgb(0, 192, 223)"
-                              d="M33.000,10.000 C33.000,10.000 56.000,7.000 66.000,11.000 "/>
+                        <defs>
+                            <clipPath id="myClip_1">
+                            <path fill-rule="evenodd"  fill="rgb(0, 192, 223)" d="M-0.000,-0.000 C-0.000,-0.000 65.000,5.000 85.000,-0.000 "/></clipPath>
+                            <clipPath id="myClip_2"><path fill-rule="evenodd"  fill="rgb(0, 192, 223)"
+                              d="M33.000,10.000 C33.000,10.000 56.000,7.000 66.000,11.000 "/></clipPath>
+                        </defs>
+                        <path d="M-0.000,-0.000 C-0.000,-0.000 65.000,5.000 85.000,-0.000 " fill="none" stroke="#f5e000" stroke-width="6" stroke-linecap="round" clip-path="url(#myClip_1)"/>
+                        <path d="M33.000,10.000 C33.000,10.000 56.000,7.000 66.000,11.000 " fill="none" stroke="#f5e000" stroke-width="6" stroke-linecap="round" clip-path="url(#myClip_2)"/>
                     </svg>
                 </p>
             </div>
             </div>
         </div>
         <div class="col-sm-5 col-sm-offset-1">
-            <img class="img-responsive" src="images/about/point.jpg" alt="">
+            <img class="img-responsive slideInRightMy js-animated js-scroll animated" data-wow-delay="0.1s" data-wow-duration="2s" src="images/about/point.jpg" alt="">
         </div>
     </div>
 </section>
 <section class="do">
     <div class="big-header">
-        <h2 class="do__page-header big-header__text">Что мы делаем</h2>
+        <h2 class="do__page-header big-header__text  js-animated-head" style="opacity: 1; transform: translate3d(0px, 0px, 0px);">Что мы делаем</h2>
     </div>
     <div class="row">
         <div class="col-sm-5">
-            <img class="img-responsive" src="images/about/do.jpg" alt="">
+            <img class="img-responsive slideInLeftMy js-animated js-scroll animated" data-wow-delay="0.3s" data-wow-duration="2s" src="images/about/do.jpg" alt="">
         </div>
-        <div class="col-sm-5">
-            <h3 class="do__head">Брендинг студия</h3>
-            <div class="do__text">
+        <div class="col-sm-6 col-sm-offset-1">
+            <h3 class="do__head">Брендинг студия
                 <i class="icon-rupor"></i>
-                <ul class="do__list">
-                    <li class="do__item"><i class="do__point"></i> Разрабатываем логотипы и фирменные стили</li>
-                    <li class="do__item"><i class="do__point"></i> Проводим рекламные кампании</li>
-                    <li class="do__item"><i class="do__point"></i> Усиляем маркетинг креативными идеями</li>
+            </h3>
+            <div class="do__text slideInLeftMy js-animated js-scroll animated" data-wow-delay="0.3s" data-wow-duration="2s">
+                <ul class="c-about__list">
+                    <li class="c-about__item"><i class="c-about__point"></i> Разрабатываем логотипы и фирменные стили</li>
+                    <li class="c-about__item"><i class="c-about__point"></i> Проводим рекламные кампании</li>
+                    <li class="c-about__item"><i class="c-about__point"></i> Усиляем маркетинг креативными идеями</li>
                 </ul>
                 <svg class="line_2 blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 159 14.12"  width="159px" height="15px">
                     <defs>
@@ -79,28 +81,38 @@
         <div class="col-sm-4 col-sm-offset-2">
             <h3 class="do__head">
                 Digital-студия
+                <i class="icon-notebook c-about__icon"></i>
             </h3>
-            <i class="icon-laptop"></i>
-            <i class="icon-line_4"></i>
-            <div class="do__text">
+            <svg class="point__head-line js-draw" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 25">
+                <defs>
+                    <clipPath id="myClip">
+                        <path class="fil0" d="M37.07 18.49c0,0 14.55,-6.62 34.4,-5.29l-34.4 5.29zm0 0l0 0 0 0z"/>
+                        <path class="fil0" d="M0 9.34c0,0 42.33,-9.26 89.96,-2.65l-89.96 2.65zm0 0l0 0 0 0z" />
+                    </clipPath>
+                </defs>
+                <path d="M37.27 18.46c0,0 14.55,-6.62 34.4,-5.29m-34.4 5.29l0 0 0 0z" stroke-width="6" stroke-linecap="round" clip-path="url(#myClip)"/>
+                <path d="M0.25 9.81c0,0 42.34,-9.26 89.96,-2.65m-89.96 2.65l0 0 0 0z" stroke-width="6" stroke-linecap="round" clip-path="url(#myClip)" />
+            </svg>
+            <div class="do__text rotateInDownLeft js-animated js-scroll animated">
                 <ul class="do__list">
-                    <li class="do__item"><i class="do__point"></i>Разрабатываем сайты</li>
-                    <li class="do__item"><i class="do__point"></i>Делаем спецпроекты в Интернет</li>
-                    <li class="do__item"><i class="do__point"></i>Придумываем креатив для соцсетей</li>
+                    <li class="c-about__item"><i class="c-about__point"></i>Разрабатываем сайты</li>
+                    <li class="c-about__item"><i class="c-about__point"></i>Делаем спецпроекты в Интернет</li>
+                    <li class="c-about__item"><i class="c-about__point"></i>Придумываем креатив для соцсетей</li>
                 </ul>
             </div>
         </div>
         <div class="col-sm-5 col-sm-offset-1">
             <h3 class="do__head">
                 Видео-студия
+                <i class="icon-binocl"></i>
             </h3>
-            <i class="icon-binocl"></i>
+
             <i class="icon-line_4"></i>
-            <div class="do__text">
-                <ul class="do__list">
-                    <li class="do__item"><i class="do__point"></i>Снимаем рекламное и промо видео</li>
-                    <li class="do__item"><i class="do__point"></i>Делаем корпоративное кино</li>
-                    <li class="do__item"><i class="do__point"></i>Рисуем и анимируем</li>
+            <div class="do__text rotateInDownLeft js-animated js-scroll animated">
+                <ul class="c-about__list">
+                    <li class="c-about__item"><i class="c-about__point"></i>Снимаем рекламное и промо видео</li>
+                    <li class="c-about__item"><i class="c-about__point"></i>Делаем корпоративное кино</li>
+                    <li class="c-about__item"><i class="c-about__point"></i>Рисуем и анимируем</li>
                 </ul>
                 <i class="icon-line_4"></i>
             </div>
@@ -109,24 +121,27 @@
 </section>
 <section class="didnt">
     <div class="big-header">
-        <h2 class="point__page-header__right big-header__text">мы не делаем</h2>
+        <h2 class="didnt__page-header big-header__text js-animated-head" style="opacity: 1; transform: translate3d(0px, 0px, 0px);" >мы не делаем</h2>
     </div>
     <div class="row">
         <div class="col-sm-6 col-sm-offset-1">
-<div class="didnt__text">
-    <ul class="didnt__list">
-        <li class="didnt__item"><i class="didnt__point"></i>не дорабатываем чужие идеи</li>
-        <li class="didnt__item"><i class="didnt__point"></i>не работаем на клиента - только вместе
+<div class="didnt__text rotateInDownLeft js-animated js-scroll animated">
+    <i class="icon-no"></i>
+    <ul class="c-about__list">
+        <li class="c-about__item"><i class="c-about__point"></i>не дорабатываем чужие идеи</li>
+        <li class="c-about__item"><i class="c-about__point"></i>не работаем на клиента - только вместе
             с ним</li>
-        <li class="didnt__item"><i class="didnt__point"></i>не общаемся с теми, кто не принимает
+        <li class="c-about__item"><i class="c-about__point"></i>не общаемся с теми, кто не принимает
             решение</li>
     </ul>
     <i class="icon-line_4"></i></div>
 </div>
         <div class="col-sm-5">
-            <img class="img-responsive" src="images/about/didnt.jpg" alt="">
+            <img class="img-responsive slideInRightMy js-animated js-scroll animated" data-wow-duration="2s" src="images/about/didnt.jpg" alt="">
         </div>
     </div>
 
 </section>
     </div></main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>

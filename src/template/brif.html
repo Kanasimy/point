@@ -3,8 +3,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1">
+                    <h2 class="c-brif-header big-header__text">Бриф</h2>
                     <div class="c-brif__wrapper">
-                    <form class="c-brif__form" action="/action_mail.php" method="post" _lpchecked="1">
+                    <form class="c-brif__form js-form" action="/action_mail.php" method="post" _lpchecked="1">
                         <p class="c-brif__text">
                             <span class="js-typed">Дорогая «Точка росы»,</span>
                             <span id="dear"></span>
@@ -36,17 +37,28 @@
                             <input id="emailInput" class="c-brif__input c-brif__input-email" type="email" name="email" placeholder="" required="required"/>
                         </label>
                     </p>
-                        <input class="c-brif__submit g-recaptcha" type="submit" value="отправить" data-sitekey="6LestR4UAAAAAJ8I1F3gegE88WXVICkGLuojoT-A" data-callback="callback"/>
+                        <input class="c-brif__submit g-recaptcha js-submit" type="submit" value="отправить" data-sitekey="6LestR4UAAAAAJ8I1F3gegE88WXVICkGLuojoT-A" data-callback="callback"/>
                     </form>
                 </div></div>
             </div>
 
         </div>
     </section>
-    <section class="c-brif__thanks">
-        <div class="c-brif__text">Спасибо!
+    <section class="c-brif__thanks js-thanks">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+        <div class="c-brif__text">Спасибо! <br />
             Мы ответим вам в ближайшее время!
+            <i class="icon-plane c-brif-icon"></i>
+            <i class="icon-rupor-blue c-brif-icon"></i>
+            <i class="icon-yes c-brif-icon"></i>
+            <i class="icon-lamp-blue c-brif-icon"></i>
+            <i class="icon-arrow-blue c-brif-icon"></i>
+            <i class="icon-pencil-blue c-brif-icon"></i>
         </div>
+
+                </div></div></div>
     </section>
 
 </main>

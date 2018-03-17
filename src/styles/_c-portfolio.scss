@@ -30,7 +30,7 @@
 
 }
 
-@keyframes t-hover {sssss
+@keyframes t-hover {
   0%, 100% {
     transform: scale(1, 1);
   }
@@ -45,7 +45,7 @@
 }
 
 @keyframes t-arrow {
-  0% {;
+  0% {
     transform: translateY(0)
   }
 
@@ -93,12 +93,15 @@
       transition-duration: 0.2s;
       transition-timing-function: ease-in-out;
     }
-
-    &__body.hover {
+    &__body {
       .teplica-cls-2 {
         transform: rotate(-9.2deg) translate(-31px,37px);
-        animation: t-hover 1.7s infinite ease;
+        //animation: t-hover 1.7s infinite ease;
       }
+    }
+
+
+    &__body.hover {
       .teplica-cls-2_0,  .teplica-cls-2_3{transform: translate(10px, -5px);}
       .teplica-cls-2_2 {transform: translate(-10px);}
       .teplica-cls-2_1 {transform: translate(-10px);}

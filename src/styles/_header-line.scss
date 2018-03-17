@@ -1,5 +1,6 @@
 .l-head-line {
   height:10vw;
+  z-index: 100;
   .container {z-index:100;}
   &__fon {
     width: 100%;
@@ -9,17 +10,39 @@
 
 .l-head-line-left {
   width: 33%;
-  padding-bottom:60%;
   max-width: 449px;
-  position: absolute;
-  top: 0;
+  max-height: 100vh;
+  overflow: hidden;
+  position: relative;
   z-index: 0;
   .l-head-line__fon {
     height: 100%;
-    position: absolute;
   }
 }
 .l-head-line-right {
+  width: 16%;
+  max-width: 198px;
+  max-height: 100vh;
+  //overflow: hidden;
+  position: absolute;
+  top: 0;
+  right:0;
+  z-index: 10;
+}
+
+.l-head-line-no-fon-left {
+  width: 33%;
+  max-width: 449px;
+  position: absolute;
+  top:0;
+  z-index: 0;
+  .logo {
+    position:absolute;
+    left:62%;
+    top: 21px;
+  }
+}
+.l-head-line-no-fon-right {
   width: 16%;
   max-width: 198px;
   position: absolute;
@@ -27,3 +50,4 @@
   right:0;
   z-index: 10;
 }
+

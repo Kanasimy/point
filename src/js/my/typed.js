@@ -84,7 +84,7 @@ function typedEmail(arrayPos,self) {
     clearCursor();
     stopEventInput(arrayPos,self);
     var typedIz = new Typed('#email', {
-        strings: ["Здесь мой "],
+        strings: ["Здесь мой e-mail"],
         typeSpeed: 50,
         loop: false,
         onStringTyped: typedEmailInput
@@ -108,7 +108,6 @@ function typedEmailInput() {
  function eventInput(pos, self) {
      if($(self.el)[0]){
       timerEvent = setInterval(function() {
-          console.log("чужой \n");
           $(self.el).triggerHandler('input', hundlerInput);
       }, 25);}
  }

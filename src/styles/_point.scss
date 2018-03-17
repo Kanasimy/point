@@ -1,40 +1,150 @@
 .c-about {
-  &__icon{
-    position:absolute;
+  overflow: hidden;
+  overflow-y: auto;
+  .big-header {
+    position: static;
+  }
+  &__icon {
+    position: absolute;
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+  &__point {
+    height: 0.8rem;
+    width: 0.8rem;
+    border-radius: 0.4rem;
+    display: inline-block;
+    background-color: $yellow;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -.4rem;
+  }
+  &__item {
+    position: relative;
+    list-style: none;
+    list-style-position: outside;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
   }
 }
-.point{
-  margin-bottom:10rem;
 
-  &__yellow-line{
-    right: 0;
-    top: 4rem;
+.point {
+  position: relative;
+  margin-bottom: 5rem;
+  &__head {
+    color:$blue;
+    margin:2rem 0 1rem;
+  }
+  &__text{
+    position: relative;
+  }
+  .icon-pencil {
+    top:0;
+    left:-$pen-width;
+    margin-left:-2rem;
+  }
+  .icon-lamp {
+    bottom:-$lamp-height;
+    right:0;
+    margin-bottom:-2rem;
   }
   &__block {
     background: #fff;
     position: relative;
+    margin-top: -1rem;
   }
   &__page-header {
-    left:22%;
-    top:-6rem;
+    text-align: center;
+    position: relative;
+    margin-bottom: -5rem;
+  }
+  .img-responsive {
+    margin-top: 4rem;
+  }
+  &__head-line{
+    width:120px;
+  }
+
+  &__text-line{
+    width:74px;
+    left:0;
+    bottom:-1rem;
   }
 }
 
-.do{
-  margin-bottom:10rem;
-  &__icon{
-    position:absolute;
-  }
-  &__yellow-line{
-    right: 0;
-    top: 4rem;
-  }
-  &__block {
-    background: #fff;
-    position: relative;
+.do {
+  &__head{
+    margin:3rem 0 1rem;
   }
   &__page-header {
-    left:22%;
-    top:-8rem;
+    text-align: center;
+    position: relative;
   }
+  .icon-rupor {
+    margin-left: 3rem;
+  }
+  .icon-binocl {
+    margin-left: 2rem;
+  }
+  .icon-notebook {
+    left: -77px;
+    top: 42px;
+  }
+  &__list {
+    margin: 0rem;
+    padding: 0rem;
+  }
+}
+
+.didnt {
+  margin: 10rem 0 5rem 0;
+  &__page-header {
+    text-align: center;
+    position: relative;
+  }
+
+  .icon-no {
+    position: relative;
+    left: 50%;
+  }
+
+  &__text{
+    margin-top: 1rem;
+  }
+  &__list {
+    margin-top: 1rem;
+  }
+}
+//**//
+@keyframes slideInRightMy {
+  from {
+    transform: translate3d(10%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInRightMy {
+  animation-name: slideInRightMy;
+}
+
+@keyframes slideInLeftMy {
+  from {
+    transform: translate3d(-10%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInLeftMy {
+  animation-name: slideInLeftMy;
 }

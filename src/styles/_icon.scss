@@ -31,6 +31,12 @@
   vertical-align: middle;
 }
 
+.icon-arrow-blue {
+  @include sprite($arrow-blue);
+  display:inline-block;
+}
+
+
 .icon-point {
   @include sprite($point);
   display:inline-block;
@@ -110,8 +116,47 @@
   display: inline-block;
 }
 
-.icon-pencil {
-  @include sprite($pen);
+.icon-lamp-blue {
+  @include sprite($lamp-blue);
   margin-right:24px;
+  display: inline-block;
+}
+
+.icon-pencil {
+   @include sprite($pen);
+   margin-right:24px;
+   display: inline-block;
+ }
+.icon-pencil-blue {
+  @include sprite($pen-blue);
+  display: inline-block;
+}
+
+.icon-rupor {
+  @include sprite($rupor);
+  display: inline-block;
+}
+.icon-rupor-blue {
+  @include sprite($rupor-blue);
+  display: inline-block;
+}
+
+.icon-notebook {
+  @include sprite($notebook);
+  display: inline-block;
+}
+
+.icon-binocl {
+  @include sprite($binocl);
+  display: inline-block;
+}
+
+.icon-no {
+  @include sprite($no);
+  display: inline-block;
+}
+
+.icon-yes {
+  @include sprite($yes);
   display: inline-block;
 }

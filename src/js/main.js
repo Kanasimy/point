@@ -18,6 +18,7 @@ jQuery(function(){
         //= my/tab.js
         //= my/jelly.js
         //= my/paralax.js
+        //= my/mail.js
     });
 
 });

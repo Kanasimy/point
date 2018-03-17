@@ -15,9 +15,8 @@ $('#fullpage').fullpage({
         else if(index == 6){
             $('.js-menu').hide();
             // animated
-
-                $('.c-footer__link').addClass('animated slideInLeft slideInUp');
-                $('.c-footer__head').addClass('animated slideInRight slideInDown');
+                $('.c-footer__link').addClass('animated slideInLeft');
+                $('.c-footer__head').addClass('animated slideInRight');
 
 
         }

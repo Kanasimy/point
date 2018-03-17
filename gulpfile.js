@@ -115,8 +115,8 @@ gulp.task('style:build', function() {
         .pipe(autoprefixer("last 2 version", "> 1%", "Explorer >= 8", {
             cascade: true
         }))
-        .pipe(cssmin())
-        .pipe(sourceMaps.write(path.build.cssMapDir))
+        //.pipe(cssmin())
+        //.pipe(sourceMaps.write(path.build.cssMapDir))
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
 });

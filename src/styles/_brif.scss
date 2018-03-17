@@ -2,9 +2,16 @@
 .c-brif {
   z-index: 100;
   position: relative;
-
+  margin-top: 1rem;
+  &-header{
+    top:-6rem;
+    right: 0;
+    z-index: 0;
+  }
   &__text {
     font-size: px-to-rem(37);
+    position: relative;
+    margin: 0;
   }
   &__input {
     font-size: px-to-rem(37);
@@ -40,6 +47,10 @@
       opacity:1;
     }
   }
+
+  &-icon {
+    position:absolute;
+  }
   &__buffer{
     font-size: px-to-rem(37);
     position: absolute;
@@ -53,7 +64,43 @@
   }
 
   &__thanks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: none;
+    height: 100vh;
+    justify-content: center; /*Центрирование по горизонтали*/
+    align-items: center;
+    .c-brif__text {display: inline-block;}
+    .icon-pencil-blue{
+      top: -8rem;
+      left: -3rem;
+    }
+    .icon-yes{
+      top: -5rem;
+      left: 45%;
+    }
+    .icon-rupor-blue {
+      bottom: -9rem;
+      left: 75%;
+    }
+    .icon-lamp-blue {
+      top: 0rem;
+      right: -13rem;
+      margin: 0;
+    }
+    .icon-arrow-blue{
+      bottom: -6rem;
+      left: 1rem;
+      margin: 0;
+    }
+
+    .icon-plane{
+     top: -7rem;
+      right: -1rem;
+      margin: 0;
+    }
   }
 
   &__submit{
@@ -62,10 +109,10 @@
     background-color: $yellow;
     border-radius: 2rem;
     border:none;
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem .7rem;
     font-size: px-to-rem(24);
     margin-bottom: 0;
-    line-height: 1.42857143;
+    line-height: 1;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;

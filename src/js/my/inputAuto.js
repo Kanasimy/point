@@ -11,7 +11,6 @@ for (var i = 0; input.length > i; i++) {
     input[i].parentNode.insertBefore(buffer[i], input[i].nextSibling);
 
     input[i].oninput = function(event) {
-        console.log("родной \n");
         hundlerInput(event);
     }
 };

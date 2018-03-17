@@ -26,9 +26,8 @@ jQuery(function(){
                 else if(index == 6){
                     $('.js-menu').hide();
                     // animated
-        
-                        $('.c-footer__link').addClass('animated slideInLeft slideInUp');
-                        $('.c-footer__head').addClass('animated slideInRight slideInDown');
+                        $('.c-footer__link').addClass('animated slideInLeft');
+                        $('.c-footer__head').addClass('animated slideInRight');
         
         
                 }
@@ -43,7 +42,7 @@ jQuery(function(){
         var wow = new scroll.WOW(
             {
                 boxClass:     'js-scroll',
-                animateClass: 'animated',
+                animateClass: 'js-animated',
                 offset:       0,
                 mobile:       true,
                 live:         true,
@@ -69,10 +68,11 @@ jQuery(function(){
                 $(this).parents('.c-portfolio__body').removeClass('hover');
         }
         );
-        
+        //animated page project
         $('.c-projects__item').hover(
             function() {
                 $(this).find('.c-projects__hover').addClass('animated fadeInDown');
+                //debugger
             },
             function() {
                 var self = $(this);
@@ -83,6 +83,60 @@ jQuery(function(){
                 setTimeout(deleted, 500);
             }
         );
+         //animated page about
+        if (typeof TimelineMax == 'function') {
+            var paths = $('path:not(defs path)');
+            paths.each(function (i, e) {
+                e.style.strokeDasharray = e.style.strokeDashoffset = e.getTotalLength();
+            });
+            var tl = new TimelineMax();
+            tl.add([
+                TweenLite.to(paths.eq(0), 1, {strokeDashoffset: 0, delay: 1}),
+                TweenLite.to(paths.eq(1), 1, {strokeDashoffset: 0, delay: 0.5}),
+                TweenLite.to(paths.eq(2), 1, {strokeDashoffset: 0, delay: 1})
+            ]);
+        }
+        
+        function T(element, e, H) {
+            var i = Math.pow(2 * e - 1, 3) * H * .125,
+                n = (1 - Math.abs(Math.pow(2 * e - 1, 4))).toFixed(3);
+            element.style.transform="translate3d(0, " + i.toFixed(3) + "px, 0)";
+            element.style.opacity=n;
+        }
+        var Visible = function (target) {
+            var targetPosition = {
+                    top: window.pageYOffset + target.getBoundingClientRect().top,
+                    bottom: window.pageYOffset + target.getBoundingClientRect().bottom
+                },
+                windowPosition = {
+                    top: window.pageYOffset,
+                    bottom: window.pageYOffset + document.documentElement.clientHeight
+                },
+                H = windowPosition.bottom-windowPosition.top,
+                eH = targetPosition.bottom-targetPosition.top,
+                eM = targetPosition.top + eH/2,
+                e = 1-(eH/2+windowPosition.bottom-eM)/(H+eH/2);
+        
+            if (targetPosition.bottom > windowPosition.top &&
+                targetPosition.top < windowPosition.bottom
+               ) {
+                T(target,e,H);
+            }
+        };
+        
+        var elements = document.querySelectorAll('.js-animated-head');
+        for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+        // А также запустим функцию сразу. А то вдруг, элемент изначально видно
+            Visible (element);
+        }
+        window.addEventListener('scroll', function() {
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                console.log(element);
+                Visible (element);
+            }
+        });
         function typedForm(){
         var input = document.querySelectorAll('.c-brif__input'),
             buffer = [],
@@ -96,7 +150,6 @@ jQuery(function(){
             input[i].parentNode.insertBefore(buffer[i], input[i].nextSibling);
         
             input[i].oninput = function(event) {
-                console.log("родной \n");
                 hundlerInput(event);
             }
         };
@@ -212,7 +265,7 @@ jQuery(function(){
             clearCursor();
             stopEventInput(arrayPos,self);
             var typedIz = new Typed('#email', {
-                strings: ["Здесь мой "],
+                strings: ["Здесь мой e-mail"],
                 typeSpeed: 50,
                 loop: false,
                 onStringTyped: typedEmailInput
@@ -236,7 +289,6 @@ jQuery(function(){
          function eventInput(pos, self) {
              if($(self.el)[0]){
               timerEvent = setInterval(function() {
-                  console.log("чужой \n");
                   $(self.el).triggerHandler('input', hundlerInput);
               }, 25);}
          }
@@ -286,12 +338,10 @@ jQuery(function(){
             var mapOptions = {
                 /*Координаты центра карты*/
                 center: new google.maps.LatLng(55.065829, 82.9130000),
-        
                 marker: new google.maps.LatLng(55.065829, 82.9076429),
-        
                 zoom: 17,
-        
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
+                styles: [{"featureType":"administrative.country","elementType":"geometry.fill","stylers":[{"color":"#b02424"},{"visibility":"off"}]},{"featureType":"administrative.country","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#f37121"}]},{"featureType":"administrative.country","elementType":"labels.text.stroke","stylers":[{"visibility":"on"}]},{"featureType":"administrative.province","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#ca9e1a"}]},{"featureType":"administrative.province","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"administrative.province","elementType":"labels.text.fill","stylers":[{"color":"#ca9e1a"}]},{"featureType":"administrative.province","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"geometry.stroke","stylers":[{"visibility":"on"}]},{"featureType":"administrative.locality","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"geometry.stroke","stylers":[{"lightness":"70"}]},{"featureType":"administrative.land_parcel","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffd400"}]},{"featureType":"landscape","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#ffd400"}]},{"featureType":"landscape.man_made","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"landscape.natural.landcover","elementType":"geometry.fill","stylers":[{"color":"#ffd400"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"color":"#ffd400"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry.fill","stylers":[{"color":"#ffd400"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#fcaf17"}]},{"featureType":"poi","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#ffd400"}]},{"featureType":"poi.park","elementType":"labels.text.fill","stylers":[{"color":"#cf373a"}]},{"featureType":"poi.park","elementType":"labels.text.stroke","stylers":[{"visibility":"off"},{"color":"#f37121"}]},{"featureType":"poi.school","elementType":"geometry.fill","stylers":[{"color":"#fcaf17"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#f37121"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.highway.controlled_access","elementType":"geometry.fill","stylers":[{"color":"#cf373a"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#fcaf17"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"#fcaf17"},{"visibility":"on"}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#fcaf17"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"saturation":"100"},{"lightness":"-8"},{"color":"#1099ce"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]}]
             };
             var marker = new google.maps.Marker({
                 position: mapOptions.marker,
@@ -304,13 +354,11 @@ jQuery(function(){
             marker.setMap(map);
         //Москва
             var mapOptions = {
-        
                 center: new google.maps.LatLng(55.759235, 37.6712000),
-        
                 marker: new google.maps.LatLng(55.759235, 37.6660459),
-        
                 zoom: 17,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
+                styles: [{"featureType":"administrative.country","elementType":"geometry.fill","stylers":[{"color":"#b02424"},{"visibility":"off"}]},{"featureType":"administrative.country","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#f37121"}]},{"featureType":"administrative.country","elementType":"labels.text.stroke","stylers":[{"visibility":"on"}]},{"featureType":"administrative.province","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#ca9e1a"}]},{"featureType":"administrative.province","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"administrative.province","elementType":"labels.text.fill","stylers":[{"color":"#ca9e1a"}]},{"featureType":"administrative.province","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"geometry.stroke","stylers":[{"visibility":"on"}]},{"featureType":"administrative.locality","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"geometry.stroke","stylers":[{"lightness":"70"}]},{"featureType":"administrative.land_parcel","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffd400"}]},{"featureType":"landscape","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#ffd400"}]},{"featureType":"landscape.man_made","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"landscape.natural.landcover","elementType":"geometry.fill","stylers":[{"color":"#ffd400"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"color":"#ffd400"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry.fill","stylers":[{"color":"#ffd400"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#fcaf17"}]},{"featureType":"poi","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#ffd400"}]},{"featureType":"poi.park","elementType":"labels.text.fill","stylers":[{"color":"#cf373a"}]},{"featureType":"poi.park","elementType":"labels.text.stroke","stylers":[{"visibility":"off"},{"color":"#f37121"}]},{"featureType":"poi.school","elementType":"geometry.fill","stylers":[{"color":"#fcaf17"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#f37121"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.highway.controlled_access","elementType":"geometry.fill","stylers":[{"color":"#cf373a"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#fcaf17"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"#fcaf17"},{"visibility":"on"}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#fcaf17"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"saturation":"100"},{"lightness":"-8"},{"color":"#1099ce"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]}]
             }
             var marker = new google.maps.Marker({
                 position: mapOptions.marker,
@@ -330,6 +378,7 @@ jQuery(function(){
                 /*Увеличение карты, чем больше чило - тем больше маштаб*/
                 zoom: 17,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
+                styles: [{"featureType":"administrative.country","elementType":"geometry.fill","stylers":[{"color":"#b02424"},{"visibility":"off"}]},{"featureType":"administrative.country","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#f37121"}]},{"featureType":"administrative.country","elementType":"labels.text.stroke","stylers":[{"visibility":"on"}]},{"featureType":"administrative.province","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#ca9e1a"}]},{"featureType":"administrative.province","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"administrative.province","elementType":"labels.text.fill","stylers":[{"color":"#ca9e1a"}]},{"featureType":"administrative.province","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"geometry.stroke","stylers":[{"visibility":"on"}]},{"featureType":"administrative.locality","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"geometry.stroke","stylers":[{"lightness":"70"}]},{"featureType":"administrative.land_parcel","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffd400"}]},{"featureType":"landscape","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#ffd400"}]},{"featureType":"landscape.man_made","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"landscape.natural.landcover","elementType":"geometry.fill","stylers":[{"color":"#ffd400"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"color":"#ffd400"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry.fill","stylers":[{"color":"#ffd400"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#fcaf17"}]},{"featureType":"poi","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#ffd400"}]},{"featureType":"poi.park","elementType":"labels.text.fill","stylers":[{"color":"#cf373a"}]},{"featureType":"poi.park","elementType":"labels.text.stroke","stylers":[{"visibility":"off"},{"color":"#f37121"}]},{"featureType":"poi.school","elementType":"geometry.fill","stylers":[{"color":"#fcaf17"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#f37121"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.highway.controlled_access","elementType":"geometry.fill","stylers":[{"color":"#cf373a"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#fcaf17"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"#fcaf17"},{"visibility":"on"}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#fcaf17"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"saturation":"100"},{"lightness":"-8"},{"color":"#1099ce"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]}]
             };
             var marker = new google.maps.Marker({
                 position: mapOptions.marker,
@@ -356,97 +405,98 @@ jQuery(function(){
             $(target).show();
         });
         (function () {
-            var current,
-                options =[],
-                init=true;
+                var current,
+                    options = [],
+                    selector = '.jelly-canvas',
+                    init = true;
+        if(!document.querySelectorAll(selector).length>0) return false;
+                var baseOptions = {
+                    svg: 'images/svg/jelly.svg',
+                    pointsNumber: 15,
+                    maxDistance: 70,
+                    intensity: .85,
+                    mouseIncidence: 50,
+                    x: 40,
+                    y: 10,
+                    debug: 0//,
+                    //centroid: '.centroid-text'
+                };
         
-            var baseOptions ={
-                svg: 'images/svg/jelly.svg',
-                pointsNumber: 15,
-                maxDistance: 70,
-                intensity:.85,
-                mouseIncidence:50,
-                x: 40,
-                y: 10,
-                debug: 0//,
-                //centroid: '.centroid-text'
-            };
+                var optionsItem0 = extend({}, baseOptions, {paths: '#animated-path-0', color: '#00c2e1'}),
+                    optionsItem1 = extend({}, baseOptions, {paths: '#animated-path-1', color: 'red'}),
+                    optionsItem2 = extend({}, baseOptions, {paths: '#animated-path-2', color: 'green'});
         
-            var optionsItem0 =  extend({}, baseOptions, {paths: '#animated-path-0',color: '#00c2e1'}),
-                optionsItem1 = extend({}, baseOptions, {paths: '#animated-path-1',color: 'red'}),
-                optionsItem2 = extend({}, baseOptions, {paths: '#animated-path-2',color: 'green'});
+                /* Initializing jelly */
+                options.push(optionsItem0);
+                options.push(optionsItem1);
+                options.push(optionsItem2);
         
-            /* Initializing jelly */
-            options.push(optionsItem0);
-            options.push(optionsItem1);
-            options.push(optionsItem2);
+                var jelly = new Jelly(selector, options);
         
-            var jelly = new Jelly('.jelly-canvas', options);
-        
-            function extendSingle(target, source) {
-                for (var key in source)
-                    target[key] = Array.isArray(source[key]) ? source[key].slice(0) : source[key];
-                return target;
-            }
-            function extend(target, source) {
-                if (!target) target = {};
-                for (var i = 1; i < arguments.length; i++)
-                    extendSingle(target, arguments[i]);
-                return target;
-            }
-            function rand(min, max) {
-                var result = [],
-                rand = Math.abs(Math.round(min - 0.5 + Math.random() * (max - min + 1)));
-                if(current==undefined){ current = Math.abs(Math.round(min - 0.5 + Math.random() * (max - min + 1)));}
-                while (rand==current) {
-                    rand = Math.abs(Math.round(min - 0.5 + Math.random() * (max - min + 1)));
+                function extendSingle(target, source) {
+                    for (var key in source)
+                        target[key] = Array.isArray(source[key]) ? source[key].slice(0) : source[key];
+                    return target;
                 }
         
-                result[0] = current;
-                result[1] = rand;
-                current = result[1];
-                return result;
-            }
-            // function morph(init) {
-            //     var i=rand(0,2);
-            //
-            //     if(init){
-            //         init=false;
-            //         jelly.show({i: i[0], maxDelay:0, animate: false});
-            //         setTimeout(function () {
-            //             console.log('ghfgh');
-            //         },1000)
-            //     }
-            //     console.log('Индекс:');
-            //     console.log(i[0]+' и '+i[1]);
-            //     console.log(options);
-            //
-            //     jelly.morph(extend({i: i[0],maxDelay: 300,animate: true}, 'optionsItem'+i[1]));
-            // }
+                function extend(target, source) {
+                    if (!target) target = {};
+                    for (var i = 1; i < arguments.length; i++)
+                        extendSingle(target, arguments[i]);
+                    return target;
+                }
+        
+                function rand(min, max) {
+                    var result = [],
+                        rand = Math.abs(Math.round(min - 0.5 + Math.random() * (max - min + 1)));
+                    if (current == undefined) {
+                        current = Math.abs(Math.round(min - 0.5 + Math.random() * (max - min + 1)));
+                    }
+                    while (rand == current) {
+                        rand = Math.abs(Math.round(min - 0.5 + Math.random() * (max - min + 1)));
+                    }
+        
+                    result[0] = current;
+                    result[1] = rand;
+                    current = result[1];
+                    return result;
+                }
+        
+                // function morph(init) {
+                //     var i=rand(0,2);
+                //
+                //     if(init){
+                //         init=false;
+                //         jelly.show({i: i[0], maxDelay:0, animate: false});
+                //         setTimeout(function () {
+                //             console.log('ghfgh');
+                //         },1000)
+                //     }
+                //     console.log('Индекс:');
+                //     console.log(i[0]+' и '+i[1]);
+                //     console.log(options);
+                //
+                //     jelly.morph(extend({i: i[0],maxDelay: 300,animate: true}, 'optionsItem'+i[1]));
+                // }
         
         
+                jelly.hide({i: 1, maxDelay: 0, animate: false});
+                jelly.hide({i: 2, maxDelay: 0, animate: false});
         
         
+                // morph();
+                setInterval(function (active, current) {
+                    // morph()
+                    jelly.morph(extend({i: 0, maxDelay: 200, animate: true}, optionsItem2));
+                    jelly.morph(extend({i: 0, maxDelay: 200, animate: true}, optionsItem1));
+                    jelly.morph(extend({i: 0, maxDelay: 200, animate: true}, optionsItem0));
+                }, 600)
         
-             jelly.hide({i: 1, maxDelay:0, animate: false});
-             jelly.hide({i: 2, maxDelay:0, animate: false});
-        
-        
-        
-        
-           // morph();
-             setInterval(function (active, current) {
-                // morph()
-                 jelly.morph(extend({i: 0,maxDelay: 200,animate: true}, optionsItem2));
-                 jelly.morph(extend({i: 0,maxDelay: 200,animate: true}, optionsItem1));
-                 jelly.morph(extend({i: 0,maxDelay: 200,animate: true}, optionsItem0));
-             },600)
-        
-        })();
-        /**intensive от 1 до 10**/
+            })();
+        /**интенсивность от 1 до 10**/
         function paralax(selector, intensive) {
+            if(typeof paralaxcontainer === "undefined") return false;
             var paralax = paralaxcontainer.querySelectorAll(selector),
-                maxMove = paralaxcontainer.offsetWidth / 30,
                 fluidparalax = window.matchMedia("(min-width: 726px)"),
                 x = intensive;
         
@@ -474,7 +524,6 @@ jQuery(function(){
                     var distX = mousePos.x - paralaxCenterX[i];
                     var distY = mousePos.y - paralaxCenterY[i];
                     if (fluidparalax.matches) {
-                        debugger;
                         paralax[i].style.transform = "translate("+(-1*distX)*x/40+"px,"+(-1*distY)*x/40+"px)";
                     }
         
@@ -485,6 +534,35 @@ jQuery(function(){
         
         paralax('.js-paralax',3);
         paralax('.js-paralax-low',1);
+        function mail() {
+            var formData = $('.js-form'),
+                btnSubmit = $('.js-submit');
+                thanks = $('.js-thanks')
+            function thanksShow() {
+                formData.hide();
+                thanks.show().css('display','flex');
+            }
+            btnSubmit.click(function () {
+                console.log(this);
+                thanksShow();
+                // $.ajax({
+                //     url: '/action_mail.php',
+                //     type: 'post',
+                //     data: formData.serialize(),
+                //     dataType: 'text',
+                //     success: function(data){
+                //         //merci page
+                //
+                //     },
+                //     error: function(req, text, error) {
+                //         alert('Ошибка : ' + text + ' | ' + error);
+                //     }
+                // });
+                return false;
+            });
+        
+        };
+        mail();
     });
 
 });

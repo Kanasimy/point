@@ -1,6 +1,9 @@
 .l-head {
   position: relative;
   height:100vh;
+  .fp-tableCell {
+    vertical-align: top;
+  }
   .container {z-index:100;}
   &__fon {
     width: 100%;
@@ -12,19 +15,43 @@
     left: 100%;
     width: 100%;
     padding: 0 20% 0 0;
+    @media screen and (max-width: $container-big) {
+      width: 190%;
+      padding-left:10%;
+    }
+    @media screen and (max-width: $container-big) {
+      width: 150%;
+      padding-left:5%;
+    }
+  }
+  .bottom-href {
+    width: 19rem;
+    left: 50%;
+    margin-left: -9.5rem;
+    border-radius: 2rem;
+    padding: 0.5rem 0;
+    transition: background 0.5s ease;
+    &:hover {
+      background: $blue-light;
+    }
   }
 }
 
 .l-head-left {
   width: 54%;
-  padding-bottom: 45%;
   max-width: 693px;
-  position: absolute;
+  max-height: 601px;
+  position: relative;
   top: 0;
   z-index: 20;
+  @media screen and (max-width: $container-big) {
+    width: 32%;
+  }
+  @media screen and (min-width: 0px  ) and (max-width: $container-tablet) {
+    width: 40%;
+  }
   .l-head__fon {
     height: 100%;
-    position: absolute;
   }
 }
 .l-head-right {
@@ -34,4 +61,10 @@
   top: 0;
   right:0;
   z-index: 10;
+  @media screen and (max-width: $container-big) {
+    width: 27%;
+  }
+  @media screen and (min-width: 0px  ) and (max-width: $container-tablet) {
+    width: 33%;
+  }
 }
