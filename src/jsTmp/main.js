@@ -14,27 +14,30 @@ jQuery(function(){
             anchors: ['firstSection', 'secondSection', 'thirdSection', 'fourthSection','fifthSection', 'sixSection'],
             menu: '.js-menu',
             dragAndMove: true,
-            onLeave: function(anchorLink, index){
-                var loadedSection = $(this);
-        
-                //using index
-                if(index == 1){
+            onLeave: function(index, nextIndex){
+                $('.img-responsive.fadeIn').removeClass('animated');
+                $('.rotateIn').removeClass('animated');
+                if(nextIndex == 1){
                     $('.js-menu').hide();
                     // animated
                     $('.c-footer__head, .c-footer__link').removeClass('animated');
                 }
-                else if(index == 6){
+                else if(nextIndex == 6){
                     $('.js-menu').hide();
                     // animated
                         $('.c-footer__link').addClass('animated slideInLeft');
                         $('.c-footer__head').addClass('animated slideInRight');
-        
-        
                 }
                 else {
                     $('.js-menu').show();
                     $('.c-footer__head, .c-footer__link').removeClass('animated');
                 }
+            },
+            afterLoad: function(anchorLink){
+                //использование ссылки с привязкой
+                console.log(anchorLink);
+                $('[data-anchor="'+anchorLink+'"] .img-responsive.fadeIn').addClass('animated');
+                $('[data-anchor="'+anchorLink+'"] .rotateIn').addClass('animated');
             }
         });
             $('html').addClass('ENABLED');
@@ -72,7 +75,6 @@ jQuery(function(){
         $('.c-projects__item').hover(
             function() {
                 $(this).find('.c-projects__hover').addClass('animated fadeInDown');
-                //debugger
             },
             function() {
                 var self = $(this);
@@ -133,7 +135,6 @@ jQuery(function(){
         window.addEventListener('scroll', function() {
             for (var i = 0; i < elements.length; i++) {
                 var element = elements[i];
-                console.log(element);
                 Visible (element);
             }
         });
@@ -405,94 +406,169 @@ jQuery(function(){
             $(target).show();
         });
         (function () {
-                var current,
-                    options = [],
-                    selector = '.jelly-canvas',
-                    init = true;
-        if(!document.querySelectorAll(selector).length>0) return false;
-                var baseOptions = {
-                    svg: 'images/svg/jelly.svg',
-                    pointsNumber: 15,
-                    maxDistance: 70,
-                    intensity: .85,
-                    mouseIncidence: 50,
-                    x: 40,
-                    y: 10,
-                    debug: 0//,
-                    //centroid: '.centroid-text'
-                };
+            var i=0,y=0,
+                jellyOption = [];
+                options = [],
+                jelly = [],
+                selector = '.jelly-center',
+                init = true;
         
-                var optionsItem0 = extend({}, baseOptions, {paths: '#animated-path-0', color: '#00c2e1'}),
-                    optionsItem1 = extend({}, baseOptions, {paths: '#animated-path-1', color: 'red'}),
-                    optionsItem2 = extend({}, baseOptions, {paths: '#animated-path-2', color: 'green'});
+            if (!document.querySelectorAll(selector).length > 0) return false;
         
-                /* Initializing jelly */
-                options.push(optionsItem0);
-                options.push(optionsItem1);
-                options.push(optionsItem2);
-        
-                var jelly = new Jelly(selector, options);
-        
-                function extendSingle(target, source) {
-                    for (var key in source)
-                        target[key] = Array.isArray(source[key]) ? source[key].slice(0) : source[key];
-                    return target;
+            var baseOption = [
+                 {
+                    option: {
+                        svg: 'images/svg/jelly-center.svg',
+                        pointsNumber: 15,
+                        maxDistance: 70,
+                        intensity: .85,
+                        mouseIncidence: 50,
+                        x: 40,
+                        y: 10,
+                        debug: 0
+                    },
+                    path: [
+                        '#animated-path-0',
+                        '#animated-path-1',
+                        '#animated-path-2'
+                    ],
+                     selector: '.jelly-center',
+                     color: '#00c2e1'
+                },
+                {
+                    option: {
+                        svg: 'images/svg/jelly-arrow.svg',
+                        pointsNumber: 15,
+                        maxDistance: 70,
+                        intensity: .85,
+                        mouseIncidence: 50,
+                        x: 40,
+                        y: 10,
+                        debug: 0//,
+                        //fixme ошибка при включении параметра
+                        //centroid: '.centroid-arrow'
+                    },
+                    path: [
+                        '#arrow',
+                        '#arrow_1',
+                        '#arrow_2'
+                    ],
+                    selector: '.jelly-arrow',
+                    color: '#f6e527'
+                },
+                {
+                    option: {
+                        svg: 'images/svg/jelly-babl.svg',
+                        pointsNumber: 10,
+                        maxDistance: 70,
+                        intensity: .5,
+                        mouseIncidence: 50,
+                        x: 40,
+                        y: 10,
+                        debug: 0
+                    },
+                    path: [
+                        '#babl1',
+                        '#babl2',
+                        '#babl3'
+                    ],
+                    selector: '.jelly-babl',
+                    color: '#f5e000'
+                },
+                {
+                    option: {
+                        svg: 'images/svg/jelly-percent.svg',
+                        pointsNumber: 15,
+                        maxDistance: 70,
+                        intensity: .85,
+                        mouseIncidence: 50,
+                        x: 40,
+                        y: 10,
+                        debug: 0
+                    },
+                    path: [
+                        '#percent1',
+                        '#percent2',
+                        '#percent3'
+                    ],
+                    selector: '.jelly-percent',
+                    color: '#2ddfff'
+                },
+                {
+                    option: {
+                        svg: 'images/svg/jelly-percent_.svg',
+                        pointsNumber: 10,
+                        maxDistance: 40,
+                        intensity: .5,
+                        mouseIncidence: 50,
+                        x: 40,
+                        y: 10,
+                        debug: 0
+                    },
+                    path: [
+                        '#percent_1',
+                        '#percent_2',
+                        '#percent_3'
+                    ],
+                    selector: '.jelly-percent_',
+                    color: '#fff140'
                 }
+            ];
         
-                function extend(target, source) {
-                    if (!target) target = {};
-                    for (var i = 1; i < arguments.length; i++)
-                        extendSingle(target, arguments[i]);
-                    return target;
-                }
         
-                function rand(min, max) {
-                    var result = [],
-                        rand = Math.abs(Math.round(min - 0.5 + Math.random() * (max - min + 1)));
-                    if (current == undefined) {
-                        current = Math.abs(Math.round(min - 0.5 + Math.random() * (max - min + 1)));
+            /* Initializing jelly */
+        
+            function extendSingle(target, source) {
+                for (var key in source)
+                    target[key] = Array.isArray(source[key]) ? source[key].slice(0) : source[key];
+                return target;
+            }
+        
+            function extend(target, source) {
+                if (!target) target = {};
+                for (var i = 1; i < arguments.length; i++)
+                    extendSingle(target, arguments[i]);
+                return target;
+            }
+        
+            function jellyBorn(baseOption) {
+                for(i; baseOption.length > i; i++){
+                    jellyOption[i]=[];
+                    jelly[i]=[];
+                    y=0;
+                    for(y; baseOption[i].path.length > y; y++ ){
+                        jellyOption[i].push(extend({}, baseOption[i].option, {paths: baseOption[i].path[y], color: baseOption[i].color}));
                     }
-                    while (rand == current) {
-                        rand = Math.abs(Math.round(min - 0.5 + Math.random() * (max - min + 1)));
-                    }
+                    jelly[i] = new Jelly(baseOption[i].selector, jellyOption[i]);
         
-                    result[0] = current;
-                    result[1] = rand;
-                    current = result[1];
-                    return result;
                 }
         
-                // function morph(init) {
-                //     var i=rand(0,2);
-                //
-                //     if(init){
-                //         init=false;
-                //         jelly.show({i: i[0], maxDelay:0, animate: false});
-                //         setTimeout(function () {
-                //             console.log('ghfgh');
-                //         },1000)
-                //     }
-                //     console.log('Индекс:');
-                //     console.log(i[0]+' и '+i[1]);
-                //     console.log(options);
-                //
-                //     jelly.morph(extend({i: i[0],maxDelay: 300,animate: true}, 'optionsItem'+i[1]));
-                // }
+        
+                for(var j=0;jelly.length> j;j++){
+                    var countOptions = jellyOption[j].length;
+                    for(var y=0;countOptions > y;y++){
+                        if(y){
+                            jelly[j].hide({i: y, maxDelay: 0, animate: false});
+                        }
+                    }
+                }
+        
+                setInterval(
+                    function () {
+                        for(var j=0;jelly.length> j;j++){
+        
+                            for(var y=0;countOptions > y;y++){
+                                if(jelly[j]!==undefined){
+                                    jelly[j].morph(extend({i: 0, maxDelay: 200, animate: true}, jellyOption[j][countOptions-y]))}
+                            }
+                        }
+        
+                    }, 600);
         
         
-                jelly.hide({i: 1, maxDelay: 0, animate: false});
-                jelly.hide({i: 2, maxDelay: 0, animate: false});
-        
-        
-                // morph();
-                setInterval(function (active, current) {
-                    // morph()
-                    jelly.morph(extend({i: 0, maxDelay: 200, animate: true}, optionsItem2));
-                    jelly.morph(extend({i: 0, maxDelay: 200, animate: true}, optionsItem1));
-                    jelly.morph(extend({i: 0, maxDelay: 200, animate: true}, optionsItem0));
-                }, 600)
-        
-            })();
+            }
+           jellyBorn(baseOption);
+        })();
         /**интенсивность от 1 до 10**/
         function paralax(selector, intensive) {
             if(typeof paralaxcontainer === "undefined") return false;
@@ -520,7 +596,6 @@ jQuery(function(){
                         paralaxCenterX[i] = paralax[i].getBoundingClientRect().x + (paralax[i].getBoundingClientRect().width / 2);
                         paralaxCenterY[i] = paralax[i].getBoundingClientRect().y + (paralax[i].getBoundingClientRect().height  / 2);
                     }
-                    console.log(paralax[i].getBoundingClientRect());
                     var distX = mousePos.x - paralaxCenterX[i];
                     var distY = mousePos.y - paralaxCenterY[i];
                     if (fluidparalax.matches) {

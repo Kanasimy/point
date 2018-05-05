@@ -31,7 +31,6 @@ $('.js-proekt').hover(
 $('.c-projects__item').hover(
     function() {
         $(this).find('.c-projects__hover').addClass('animated fadeInDown');
-        //debugger
     },
     function() {
         var self = $(this);
@@ -92,7 +91,6 @@ for (var i = 0; i < elements.length; i++) {
 window.addEventListener('scroll', function() {
     for (var i = 0; i < elements.length; i++) {
         var element = elements[i];
-        console.log(element);
         Visible (element);
     }
 });

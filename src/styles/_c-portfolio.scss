@@ -9,6 +9,10 @@
   .img-responsive {
     max-height: 80vh;
     max-width: 45vw;
+    opacity: .2;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-delay: 0.5s;
   }
   &__body {
     position: relative;
@@ -96,12 +100,12 @@
     &__body {
       .teplica-cls-2 {
         transform: rotate(-9.2deg) translate(-31px,37px);
-        //animation: t-hover 1.7s infinite ease;
+        animation: t-hover 1.7s infinite ease;
       }
     }
 
 
-    &__body.hover {
+    &__body.animated {
       .teplica-cls-2_0,  .teplica-cls-2_3{transform: translate(10px, -5px);}
       .teplica-cls-2_2 {transform: translate(-10px);}
       .teplica-cls-2_1 {transform: translate(-10px);}
@@ -150,7 +154,7 @@
       transition-timing-function: ease-in-out;
     }
 
-    &__body.hover {
+    &__body.animated {
       .sunturini-cls-1_1 {
         transform: rotate(9.2deg) translate(31px,-20px);
         animation: t-hover 1.7s infinite ease;
@@ -206,7 +210,7 @@
       transition-timing-function: ease-in-out;
     }
 
-    &__body.hover {
+    &__body.animated {
       .eantonova-cls-2_2 {
         transform: rotate(-9.2deg) translate(-39px,45px);
        animation: t-hover 1.7s infinite ease;
@@ -261,7 +265,7 @@
       transition-timing-function: ease-in-out;
     }
 
-    &__body.hover {
+    &__body.animated {
       .gis-cls-1 {
         transform: rotate(9.2deg) translate(32px,-33px);
         animation: t-hover 1.7s infinite ease;
@@ -310,6 +314,32 @@
   &:hover {text-decoration: none;}
 }
 
+@keyframes moving {
+  from {
+    transform: scale(.1) rotate(-180deg) translate(0,-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1) rotate(0deg) translateX(0%);
+    opacity: 1;
+  }
+}
+
+.moving {
+  animation-name:moving;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 0;
+}
+.teplica-name {
+  transform-origin: 30% 0;
+}
+
+.teplica-about {
+  transform-origin: 20% 0;
+}
 
 
 @media (max-width: $screen-xs-max) {

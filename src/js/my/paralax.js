@@ -25,7 +25,6 @@ function paralax(selector, intensive) {
                 paralaxCenterX[i] = paralax[i].getBoundingClientRect().x + (paralax[i].getBoundingClientRect().width / 2);
                 paralaxCenterY[i] = paralax[i].getBoundingClientRect().y + (paralax[i].getBoundingClientRect().height  / 2);
             }
-            console.log(paralax[i].getBoundingClientRect());
             var distX = mousePos.x - paralaxCenterX[i];
             var distY = mousePos.y - paralaxCenterY[i];
             if (fluidparalax.matches) {
