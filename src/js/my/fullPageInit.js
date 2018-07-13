@@ -6,6 +6,7 @@ $('#fullpage').fullpage({
     onLeave: function(index, nextIndex){
         $('.img-responsive.fadeIn').removeClass('animated');
         $('.rotateIn').removeClass('animated');
+        $('.js-proekt').removeClass('moving');
         if(nextIndex == 1){
             $('.js-menu').hide();
             // animated
@@ -27,6 +28,7 @@ $('#fullpage').fullpage({
         console.log(anchorLink);
         $('[data-anchor="'+anchorLink+'"] .img-responsive.fadeIn').addClass('animated');
         $('[data-anchor="'+anchorLink+'"] .rotateIn').addClass('animated');
+        $('[data-anchor="'+anchorLink+'"] .js-proekt').addClass('moving');
     }
 });
     $('html').addClass('ENABLED');

@@ -111,7 +111,7 @@
 }
 
 .icon-lamp {
-  @include sprite($lamp);
+  width: $lamp-width;
   margin-right:24px;
   display: inline-block;
 }
@@ -123,7 +123,7 @@
 }
 
 .icon-pencil {
-   @include sprite($pen);
+   width: $pen-width;
    margin-right:24px;
    display: inline-block;
  }
@@ -131,9 +131,8 @@
   @include sprite($pen-blue);
   display: inline-block;
 }
-
 .icon-rupor {
-  @include sprite($rupor);
+  width: $rupor-width;
   display: inline-block;
 }
 .icon-rupor-blue {
@@ -142,17 +141,17 @@
 }
 
 .icon-notebook {
-  @include sprite($notebook);
+  width: $notebook-width;
   display: inline-block;
 }
 
 .icon-binocl {
-  @include sprite($binocl);
+  width: $binocl-width;
   display: inline-block;
 }
 
 .icon-no {
-  @include sprite($no);
+  width: $no-width;
   display: inline-block;
 }
 
@@ -160,3 +159,58 @@
   @include sprite($yes);
   display: inline-block;
 }
+
+.logo-teplica {
+  @include sprite($logo-teplica);
+  text-indent: 9999px;
+}
+.icon-pumpkin {
+  @include sprite($pumpkin);
+  display: inline-block;
+  position: absolute;
+  right:-10%;
+}
+
+.icon-sheet {
+  @include sprite($small-sheet);
+  display: inline-block;
+  position: absolute;
+  right:50%;
+  top:0
+}
+.icon-eggplant {
+  @include sprite($eggplant);
+  display: inline-block;
+  position: absolute;
+  left:-20%;
+}
+
+.icon-chili {
+  @include sprite($chili);
+  display: inline-block;
+  position: absolute;
+  bottom: 2rem;
+  right: 38%;
+}
+
+.icon-money {
+  @include sprite($money);
+  display: inline-block;
+  position: absolute;
+  right:-50%;
+  top:0
+}
+
+.icon-pumpkin_ {
+  @include sprite($pumpkin_);
+  display: inline-block;
+  position: absolute;
+  left:-30%;
+  top:0
+}
+
+.icon-avocado {
+  @include sprite($avokado);
+  display: inline-block;
+}
+

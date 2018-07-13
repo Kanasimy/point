@@ -26,18 +26,21 @@ var gulp = require('gulp'),
 
 var path = {
     build: {
-        html: 'build/',
-        js: 'build/js/',
+        html: 'build/new',
+        portfolio: 'build/new/portfolio/',
+        js: 'build/new/js/',
         jsFile: 'main.js',
-        css: 'build/css/',
+        jsInit: 'init.js',
+        css: 'build/new/css/',
         cssMapDir: "/map/",
-        img: 'build/images/',
-        svg: 'build/images/svg/sprite.svg',
-        fonts: 'build/fonts/'
+        img: 'build/new/images/',
+        svg: 'build/new/images/svg/sprite.svg',
+        fonts: 'build/new/fonts/'
     },
     src: {
         html: 'src/*.html',
-        js: 'src/js/main.js',
+        portfolio: 'src/portfolio/*.html',
+        js: 'src/js/*.js',
         jsTmp: 'src/jsTmp/',
         style: 'src/styles/*.scss',
         img: 'src/images/**/*.*',
@@ -64,7 +67,7 @@ var config = {
     },
     tunnel: true,
     host: 'localhost',
-    port: 9000,
+    port: 3000,
     logPrefix: "olga_yuzich"
 };
 
@@ -78,9 +81,13 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('html:build', function () {
-    gulp.src(path.src.html)
+    gulp.src(path.src.html )
         .pipe(rigger())
         .pipe(gulp.dest(path.build.html))
+        .pipe(reload({stream: true}));
+    gulp.src(path.src.portfolio )
+        .pipe(rigger())
+        .pipe(gulp.dest(path.build.portfolio))
         .pipe(reload({stream: true}));
 });
 
@@ -99,6 +106,13 @@ gulp.task('js:build', function () {
     return browserify(path.src.jsTmp+'main.js')
         .bundle()
         .pipe(source(path.build.jsFile))
+        .pipe(gulp.dest(path.build.js));
+});
+
+gulp.task('js-init:build', function () {
+    return browserify(path.src.jsTmp+'init.js')
+        .bundle()
+        .pipe(source(path.build.jsInit))
         .pipe(gulp.dest(path.build.js));
 });
 
@@ -204,10 +218,12 @@ gulp.task('build', [
     'fonts:build',
     'js:tmp',
     'js:build',
+    'js-init:build',
+    'js-mini:build',
     'style:build',
     'fonts:build',
     'image:build',
-   'svgSprite:build',
+    'svgSprite:build',
     'pngSprite:build',
     'svgImages:build'
 ]);
@@ -223,6 +239,8 @@ gulp.task('watch', function(){
     watch([path.watch.js], function(event, cb) {
         gulp.start('js:tmp');
         gulp.start('js:build');
+        gulp.start('js-init:build');
+        gulp.start('js-mini:build');
     });
 
     watch([path.watch.img], function(event, cb) {

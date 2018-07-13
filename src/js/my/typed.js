@@ -13,7 +13,7 @@ if(document.getElementById('c-brif')) {
 function typedHello() {
     clearCursor();
     var typedHello = new Typed('#hello', {
-        strings: ["Привет, я"],
+        strings: ["Привет, я^400"],
         typeSpeed: 50,
         loop: false,
         onStringTyped: typedName
@@ -23,7 +23,7 @@ function typedHello() {
  function typedName() {
      clearCursor();
      var typedName = new Typed('#name', {
-         strings: ["напиши свое имя"],
+         strings: ["напиши свое имя^300"],
          typeSpeed: 50,
          loop: false,
          attr: 'value',
@@ -47,7 +47,7 @@ function typedIz(arrayPos,self) {
 function typedCompany() {
     clearCursor();
     var typedName = new Typed('#company', {
-        strings: ["ваша компания"],
+        strings: ["ваша компания^500"],
         typeSpeed: 50,
         loop: false,
         attr: 'value',
@@ -61,7 +61,7 @@ function typedTarget(arrayPos,self) {
     clearCursor();
     stopEventInput(arrayPos,self);
     var typedIz = new Typed('#target', {
-        strings: ["Меня интересует "],
+        strings: ["Меня интересует^200 "],
         typeSpeed: 50,
         loop: false,
         onStringTyped: typedTargetInput
@@ -71,7 +71,7 @@ function typedTarget(arrayPos,self) {
 function typedTargetInput() {
     clearCursor();
     var typedName = new Typed('#targetInput', {
-        strings: ["ваше сообщение"],
+        strings: ["ваше сообщение^100"],
         typeSpeed: 50,
         showCursor: false,
         loop: false,
@@ -84,7 +84,7 @@ function typedEmail(arrayPos,self) {
     clearCursor();
     stopEventInput(arrayPos,self);
     var typedIz = new Typed('#email', {
-        strings: ["Здесь мой e-mail"],
+        strings: ["Здесь мой^100 e-mail^300"],
         typeSpeed: 50,
         loop: false,
         onStringTyped: typedEmailInput

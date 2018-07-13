@@ -148,3 +148,30 @@
 .slideInLeftMy {
   animation-name: slideInLeftMy;
 }
+
+@media (max-width: $screen-xs-max) {
+  .point {
+    .icon-lamp {
+      margin-bottom:1rem;
+    }
+  }
+  .big-header__text {
+    @include fluidFontSize(40px, 100px, 320px, 1366px, px);
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .point {
+    .icon-lamp {
+      margin-bottom:1rem;
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+
+}
+
+@media (min-width: $screen-lg-min) {
+
+}

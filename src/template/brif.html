@@ -5,7 +5,7 @@
                 <div class="col-sm-10 col-sm-offset-1">
                     <h2 class="c-brif-header big-header__text">Бриф</h2>
                     <div class="c-brif__wrapper">
-                    <form class="c-brif__form js-form" action="/action_mail.php" method="post" _lpchecked="1">
+                    <form class="c-brif__form js-form" action="action_mail.php" method="post" _lpchecked="1">
                         <p class="c-brif__text">
                             <span class="js-typed">Дорогая «Точка росы»,</span>
                             <span id="dear"></span>
@@ -37,7 +37,7 @@
                             <input id="emailInput" class="c-brif__input c-brif__input-email" type="email" name="email" placeholder="" required="required"/>
                         </label>
                     </p>
-                        <input class="c-brif__submit g-recaptcha js-submit" type="submit" value="отправить" data-sitekey="6LestR4UAAAAAJ8I1F3gegE88WXVICkGLuojoT-A" data-callback="callback"/>
+                        <input class="c-brif__submit g-recaptcha js-submit" type="submit" onclick="mail()" value="отправить" data-sitekey="6LestR4UAAAAAJ8I1F3gegE88WXVICkGLuojoT-A" data-callback="mail"/>
                     </form>
                 </div></div>
             </div>

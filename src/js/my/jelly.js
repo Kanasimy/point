@@ -14,7 +14,7 @@
                 svg: 'images/svg/jelly-center.svg',
                 pointsNumber: 15,
                 maxDistance: 70,
-                intensity: .85,
+                intensity: .83,
                 mouseIncidence: 50,
                 x: 40,
                 y: 10,
@@ -30,10 +30,29 @@
         },
         {
             option: {
+                svg: 'images/svg/jelly-percent.svg',
+                pointsNumber: 15,
+                maxDistance: 70,
+                intensity: .84,
+                mouseIncidence: 50,
+                x: 40,
+                y: 10,
+                debug: 0
+            },
+            path: [
+                '#percent1',
+                '#percent2',
+                '#percent3'
+            ],
+            selector: '.jelly-percent',
+            color: '#2ddfff'
+        },
+        {
+            option: {
                 svg: 'images/svg/jelly-arrow.svg',
                 pointsNumber: 15,
                 maxDistance: 70,
-                intensity: .85,
+                intensity: .80,
                 mouseIncidence: 50,
                 x: 40,
                 y: 10,
@@ -68,25 +87,7 @@
             selector: '.jelly-babl',
             color: '#f5e000'
         },
-        {
-            option: {
-                svg: 'images/svg/jelly-percent.svg',
-                pointsNumber: 15,
-                maxDistance: 70,
-                intensity: .85,
-                mouseIncidence: 50,
-                x: 40,
-                y: 10,
-                debug: 0
-            },
-            path: [
-                '#percent1',
-                '#percent2',
-                '#percent3'
-            ],
-            selector: '.jelly-percent',
-            color: '#2ddfff'
-        },
+
         {
             option: {
                 svg: 'images/svg/jelly-percent_.svg',
@@ -108,9 +109,7 @@
         }
     ];
 
-
     /* Initializing jelly */
-
     function extendSingle(target, source) {
         for (var key in source)
             target[key] = Array.isArray(source[key]) ? source[key].slice(0) : source[key];
@@ -133,15 +132,13 @@
                 jellyOption[i].push(extend({}, baseOption[i].option, {paths: baseOption[i].path[y], color: baseOption[i].color}));
             }
             jelly[i] = new Jelly(baseOption[i].selector, jellyOption[i]);
-
         }
-
 
         for(var j=0;jelly.length> j;j++){
             var countOptions = jellyOption[j].length;
             for(var y=0;countOptions > y;y++){
                 if(y){
-                    jelly[j].hide({i: y, maxDelay: 0, animate: false});
+                   jelly[j].hide({i: y, maxDelay: 0, animate: false});
                 }
             }
         }
@@ -149,16 +146,20 @@
         setInterval(
             function () {
                 for(var j=0;jelly.length> j;j++){
-
                     for(var y=0;countOptions > y;y++){
                         if(jelly[j]!==undefined){
-                            jelly[j].morph(extend({i: 0, maxDelay: 200, animate: true}, jellyOption[j][countOptions-y]))}
+                           jelly[j].morph(extend({i: 0, maxDelay: 200, animate: true}, jellyOption[j][countOptions-y]))
+                          }
                     }
                 }
-
             }, 600);
 
 
     }
    jellyBorn(baseOption);
+    if(document.body.classList.contains('prelader')){
+        setTimeout(function(){
+            location.href = '/new/izbrannoe.html';
+        }, 10000);
+    }
 })();

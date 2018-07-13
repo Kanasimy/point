@@ -1,367 +1,451 @@
 .c-portfolio {
-  z-index: 1;
-  &__image {
-    @include clearfix;
-    display: inline-block;
-    position:relative;
-    width: 100%;
-  }
-  .img-responsive {
-    max-height: 80vh;
-    max-width: 45vw;
-    opacity: .2;
-    animation-duration: 3s;
-    animation-timing-function: ease-out;
-    animation-delay: 0.5s;
-  }
-  &__body {
-    position: relative;
-    cursor: pointer;
-  }
-  &-wrap {
-    position: absolute;
-    right: 0;
-    left: 0;
-  }
-  &__svg {
-    max-height: 60vh;
-    max-width: 35vw;
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+	z-index: 1;
+	&__image {
+		@include clearfix;
+		display: inline-block;
+		position:relative;
+		width: 100%;
+	}
+	.img-responsive {
+		max-height: 80vh;
+		max-width: 45vw;
+		opacity: .2;
+		animation-duration: 3s;
+		animation-timing-function: ease-out;
+		animation-delay: 0.5s;
+		transform: scale(0.95);
+		transition-duration: 0.2s;
+	}
+	&__body {
+		position: relative;
+		cursor: pointer;
+	}
+	&-wrap {
+		position: absolute;
+		right: 0;
+		left: 0;
+	}
+	&__svg {
+		max-height: 60vh;
+		max-width: 35vw;
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 
 }
 
-@keyframes t-hover {
-  0%, 100% {
-    transform: scale(1, 1);
-  }
 
-  21% {
-    transform: scale(1.05, 0.995);
-  }
-
-  50% {
-    transform: scale(0.99, 1.02);
-  }
-}
-
-@keyframes t-arrow {
-  0% {
-    transform: translateY(0)
-  }
-
-  50% {
-    transform: translateY(-0.5rem)
-  }
-
-  55% {
-    transform: translateY(-0.5rem)
-  }
-
-  100% {
-    transform: translateY(0)
-  }
-}
 
 .c-portfolio__teplica {
-  .teplica-cls-2, .teplica-cls-2_0, .teplica-cls-2_1, .teplica-cls-2_3, .teplica-cls-2_2 {
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-  }
-  .c-portfolio {
-    &__svg {
-      right: 10rem;
-      top: 65%;
-      z-index: 10;
-    }
-    &__cat {
-      vertical-align: middle;
-      position:absolute;
-      left: 45%;
-      top: 25%;
-      transition-property: left;
-      transition-duration: 0.2s;
-      transition-timing-function: ease-in-out;
-      z-index: 100;
-    }
-    &__line {
-      display: inline-block;
-      vertical-align: middle;
-      width:15vw;
-      background: $yellow;
-      height:2px;
-      transition-property: width;
-      transition-duration: 0.2s;
-      transition-timing-function: ease-in-out;
-    }
-    &__body {
-      .teplica-cls-2 {
-        transform: rotate(-9.2deg) translate(-31px,37px);
-        animation: t-hover 1.7s infinite ease;
-      }
-    }
+	.teplica-cls-2, .teplica-cls-2_0, .teplica-cls-2_1, .teplica-cls-2_3, .teplica-cls-2_2 {
+		transition-duration: 0.2s;
+		transition-timing-function: ease-in-out;
+	}
+	.c-portfolio {
+		&__svg {
+			right: 10rem;
+			top: 65%;
+			z-index: 10;
+		}
+		&__cat {
+			vertical-align: middle;
+			position:absolute;
+			left: 45%;
+			top: 25%;
+			transition-property: left;
+			transition-duration: 0.2s;
+			transition-timing-function: ease-in-out;
+			z-index: 100;
+		}
+		&__line {
+			display: inline-block;
+			vertical-align: middle;
+			width:15vw;
+			background: $yellow;
+			height:2px;
+			transition-property: width;
+			transition-duration: 0.5s;
+			transition-timing-function: ease-in-out;
+		}
+		&__body {
+			.teplica-cls-2 {
+				transform: rotate(-9.2deg) translate(-31px,37px);
+				animation: t-hover 1.7s infinite ease;
+			}
+			.js-proekt{
+				opacity: 0;
+			}
+		}
 
 
-    &__body.animated {
-      .teplica-cls-2_0,  .teplica-cls-2_3{transform: translate(10px, -5px);}
-      .teplica-cls-2_2 {transform: translate(-10px);}
-      .teplica-cls-2_1 {transform: translate(-10px);}
-      .c-portfolio__cat {
-        position:absolute;
-        left: 50%;
-        top: 25%;
-      }
-      .c-portfolio__line {
-        width:15vw;
-        background: $yellow;
-        height:2px;
-      }
-    }
-  }
+		&__body.animated {
+
+		}
+
+		&__body.hover {
+			.img-responsive {
+				transform: scale(1);
+			}
+			.js-proekt{
+				opacity: 0;
+			}
+
+			.teplica-cls-2_0,  .teplica-cls-2_3{transform: translate(10px, -5px);}
+			.teplica-cls-2_2 {transform: translate(-10px);}
+			.teplica-cls-2_1 {transform: translate(-10px);}
+			.c-portfolio__cat {
+				position:absolute;
+				left: 50%;
+				top: 25%;
+			}
+			.c-portfolio__line {
+				width:15vw;
+				background: $yellow;
+				height:2px;
+			}
+		}
+	}
 }
 
 .c-portfolio__sunturini {
-  .sunturini-cls-1_1, .sunturini-cls-2, .sunturini-cls-1_0, .sunturini-cls-1_2, .sunturini-cls-1 {
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-  }
-  .c-portfolio {
-    &__svg {
-      left: 0rem;
-      z-index: 10;
-    }
-    &__cat {
-      vertical-align: middle;
-      position:absolute;
-      left: 0%;
-      top: 15%;
-      transition-property: left;
-      transition-duration: 0.2s;
-      transition-timing-function: ease-in-out;
-      z-index: 100;
-    }
-    &__line {
-      display: inline-block;
-      vertical-align: middle;
-      width:15vw;
-      background: $blue;
-      height:2px;
-      transition-property: width;
-      transition-duration: 0.2s;
-      transition-timing-function: ease-in-out;
-    }
+	.sunturini-cls-1_1, .sunturini-cls-2, .sunturini-cls-1_0, .sunturini-cls-1_2, .sunturini-cls-1 {
+		transition-duration: 0.2s;
+		transition-timing-function: ease-in-out;
+	}
+	.c-portfolio {
+		&__svg {
+			left: 0rem;
+			z-index: 10;
+		}
+		&__cat {
+			vertical-align: middle;
+			position:absolute;
+			left: 0%;
+			top: 15%;
+			transition-property: left;
+			transition-duration: 0.2s;
+			transition-timing-function: ease-in-out;
+			z-index: 100;
+		}
+		&__line {
+			display: inline-block;
+			vertical-align: middle;
+			width:15vw;
+			background: $blue;
+			height:2px;
+			transition-property: width;
+			transition-duration: 0.2s;
+			transition-timing-function: ease-in-out;
+		}
 
-    &__body.animated {
-      .sunturini-cls-1_1 {
-        transform: rotate(9.2deg) translate(31px,-20px);
-        animation: t-hover 1.7s infinite ease;
-      }
-      .sunturini-cls-2,  .sunturini-cls-1{transform: translate(10px, -5px);}
-      .sunturini-cls-1_0 {transform: translate(-10px);}
-      .sunturini-cls-1_2 {transform: translate(-10px);}
-      .c-portfolio__cat {
-        left: -5%;
-      }
-      .c-portfolio__line {
-        width:15vw;
-        background: $blue;
-        height:2px;
-      }
-    }
-  }
+		&__body.animated {
+			.sunturini-cls-1_1 {
+				transform: rotate(9.2deg) translate(31px,-20px);
+				animation: t-hover 1.7s infinite ease;
+			}
 
-  .img-responsive {
-    float: right;
-    margin-right: 7em;
-  }
+		}
+		&__body.hover{
+			.sunturini-cls-2,  .sunturini-cls-1{transform: translate(10px, -5px);}
+			.sunturini-cls-1_0 {transform: translate(-10px);}
+			.sunturini-cls-1_2 {transform: translate(-10px);}
+			.c-portfolio__cat {
+				left: -5%;
+			}
+			.c-portfolio__line {
+				width:15vw;
+				background: $blue;
+				height:2px;
+			}
+		}
+	}
+
+	.img-responsive {
+		float: right;
+		margin-right: 7em;
+	}
 }
 
 .c-portfolio__eantonova {
-  .eantonova-cls-2,.eantonova-cls-2_0, .eantonova-cls-2_1, .eantonova-cls-2_2, .eantonova-cls-2_3  {
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-  }
-  .c-portfolio {
-    &__svg {
-      right: 13rem;
-    }
-    &__cat {
-      width:100%;
-      vertical-align: middle;
-      position:absolute;
-      left: 45%;
-      top: 18%;
-      transition-property: left;
-      transition-duration: 0.2s;
-      transition-timing-function: ease-in-out;
-      z-index: 100;
-    }
-    &__line {
-      display: inline-block;
-      vertical-align: middle;
-      width:15vw;
-      background: $yellow;
-      height:2px;
-      transition-property: width;
-      transition-duration: 0.2s;
-      transition-timing-function: ease-in-out;
-    }
+	.eantonova-cls-2,.eantonova-cls-2_0, .eantonova-cls-2_1, .eantonova-cls-2_2, .eantonova-cls-2_3  {
+		transition-duration: 0.2s;
+		transition-timing-function: ease-in-out;
+	}
+	.c-portfolio {
+		&__svg {
+			right: 13rem;
+		}
+		&__cat {
+			width:100%;
+			vertical-align: middle;
+			position:absolute;
+			left: 45%;
+			top: 18%;
+			transition-property: left;
+			transition-duration: 0.2s;
+			transition-timing-function: ease-in-out;
+			z-index: 100;
+		}
+		&__line {
+			display: inline-block;
+			vertical-align: middle;
+			width:15vw;
+			background: $yellow;
+			height:2px;
+			transition-property: width;
+			transition-duration: 0.2s;
+			transition-timing-function: ease-in-out;
+		}
 
-    &__body.animated {
-      .eantonova-cls-2_2 {
-        transform: rotate(-9.2deg) translate(-39px,45px);
-       animation: t-hover 1.7s infinite ease;
-      }
-      .eantonova-cls-2_3,  .eantonova-cls-2_1 {transform: translate(10px, -5px)}
-      .eantonova-cls-2_0, .eantonova-cls-2 {transform: translate(-10px)}
+		&__body.animated {
+			.eantonova-cls-2_2 {
+				transform: rotate(-9.2deg) translate(-39px,45px);
+				animation: t-hover 1.7s infinite ease;
+			}
 
-      .c-portfolio__cat {
-        position:absolute;
-        left: 50%;
-      }
-      .c-portfolio__line {
-        width:15vw;
-        background: $yellow;
-        height:2px;
-      }
-    }
-  }
+		}
+		&__body.hover {
+			.eantonova-cls-2_3,  .eantonova-cls-2_1 {transform: translate(10px, -5px)}
+			.eantonova-cls-2_0, .eantonova-cls-2 {transform: translate(-10px)}
+			.c-portfolio__cat {
+				position:absolute;
+				left: 50%;
+			}
+			.c-portfolio__line {
+				width:15vw;
+				background: $yellow;
+				height:2px;
+			}
+		}
+	}
 }
 
 .c-portfolio__2gis {
-  .gis-cls-1, .gis-cls-1_0, .gis-cls-1_2 {
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-  }
-  .gis-cls-1_1, .gis-cls-1_3 {
-    transition-duration: 0.6s;
-  }
-  .c-portfolio {
-  &__svg {
-      left: 0rem;
-    top:59%;
-    }
-    &__cat {
-      vertical-align: middle;
-      position:absolute;
-      left: 10%;
-      top: 18%;
-      transition-property: left;
-      transition-duration: 0.2s;
-      transition-timing-function: ease-in-out;
-      z-index: 100;
-    }
-    &__line {
-      display: inline-block;
-      vertical-align: middle;
-      width:15vw;
-      background: $blue;
-      height:2px;
-      transition-property: width;
-      transition-duration: 0.2s;
-      transition-timing-function: ease-in-out;
-    }
+	.gis-cls-1, .gis-cls-1_0, .gis-cls-1_2 {
+		transition-duration: 0.2s;
+		transition-timing-function: ease-in-out;
+	}
+	.gis-cls-1_1, .gis-cls-1_3 {
+		transition-duration: 0.6s;
+	}
+	.c-portfolio {
+		&__svg {
+			left: 0rem;
+			top:59%;
+		}
+		&__cat {
+			vertical-align: middle;
+			position:absolute;
+			left: 10%;
+			top: 18%;
+			transition-property: left;
+			transition-duration: 0.2s;
+			transition-timing-function: ease-in-out;
+			z-index: 100;
+		}
+		&__line {
+			display: inline-block;
+			vertical-align: middle;
+			width:15vw;
+			background: $blue;
+			height:2px;
+			transition-property: width;
+			transition-duration: 0.2s;
+			transition-timing-function: ease-in-out;
+		}
 
-    &__body.animated {
-      .gis-cls-1 {
-        transform: rotate(9.2deg) translate(32px,-33px);
-        animation: t-hover 1.7s infinite ease;
-      }
-      .gis-cls-1_1, .gis-cls-1_3{transform: translate(55px,23px);}
-      .gis-cls-1_0 {transform: translate(-10px);}
-      .gis-cls-1_2 {transform: translate(-10px);}
-      .c-portfolio__cat {
-        left: 5%;
-      }
-      .c-portfolio__line {
-        width:15vw;
-        background: $blue;
-        height:2px;
-      }
-    }
-  }
-  .img-responsive {
-    float: right;
-    margin-right: 7em;
-  }
+		&__body.animated {
+			.gis-cls-1 {
+				transform: rotate(9.2deg) translate(32px,-33px);
+				animation: t-hover 1.7s infinite ease;
+			}
+
+		}
+		&__body.hover {
+			.gis-cls-1_1, .gis-cls-1_3{transform: translate(55px,23px);}
+			.gis-cls-1_0 {transform: translate(-10px);}
+			.gis-cls-1_2 {transform: translate(-10px);}
+			.c-portfolio__cat {
+				left: 5%;
+			}
+			.c-portfolio__line {
+				width:15vw;
+				background: $blue;
+				height:2px;
+			}
+		}
+	}
+	.img-responsive {
+		float: right;
+		margin-right: 7em;
+	}
 }
 
 .bottom-href {
-  &.move{animation: t-arrow 1.7s infinite ease;}
-  position: absolute;
-  bottom: 2rem;
-  left:0;
-  right:0;
-  text-align: center;
-  color:$blue;
-  font-size: px-to-rem(21);
-  text-decoration: none;
-  text-transform: uppercase;
-  &:hover {text-decoration: none;}
+	&.move{animation: t-arrow 1.7s infinite ease;}
+	position: absolute;
+	bottom: 2rem;
+	left:0;
+	right:0;
+	text-align: center;
+	color:$blue;
+	font-size: px-to-rem(21);
+	text-decoration: none;
+	text-transform: uppercase;
+	&:hover {text-decoration: none;}
 }
 
 .top-href {
-  &.move{animation: t-arrow 1.7s infinite ease;}
-  position: absolute;
-  top: 2rem;
-  left:0;
-  right:0;
-  text-align: center;
-  text-decoration: none;
-  &:hover {text-decoration: none;}
+	&.move{animation: t-arrow 1.7s infinite ease;}
+	position: absolute;
+	top: 2rem;
+	left:0;
+	right:0;
+	text-align: center;
+	text-decoration: none;
+	&:hover {text-decoration: none;}
 }
 
 @keyframes moving {
-  from {
-    transform: scale(.1) rotate(-180deg) translate(0,-100%);
-    opacity: 0;
-  }
+	from {
+		transform: scale(.5) rotate(-180deg) translate(0,-100%);
+		opacity: 0;
+	}
 
-  to {
-    transform: scale(1) rotate(0deg) translateX(0%);
-    opacity: 1;
-  }
+	to {
+		transform: scale(1) rotate(0deg) translateX(0%);
+		opacity: 1;
+	}
 }
 
-.moving {
-  animation-name:moving;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-iteration-count: infinite;
-  transform-origin: 70% 0;
+.c-portfolio__teplica .c-portfolio__body .moving {
+	animation-name:moving;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-out;
+	// animation-iteration-count: infinite;
+	animation-iteration-count: 1;
+	transform-origin: 70% 0;
+	animation-fill-mode: forwards;
 }
+
+.c-portfolio__teplica .c-portfolio__body.hover .moving {
+	opacity: 1;
+	transition-duration: 0.5s;
+}
+.c-portfolio__teplica .c-portfolio__body.hover .for-hover
+{
+	animation-fill-mode: none;
+	animation: bounce 1s 1 normal;
+}
+
 .teplica-name {
-  transform-origin: 30% 0;
+	transform-origin: 50% 50%;
 }
 
 .teplica-about {
-  transform-origin: 20% 0;
+	transform-origin: 40% 20%;
+}
+
+
+@keyframes movingText {
+	from {
+		transform:  translate(0,-100%);
+	}
+
+	to {
+		transform: translateX(0%);
+	}
+}
+
+.movingText {
+	animation-name:moving;
+	animation-duration: .5s;
+	animation-timing-function: ease-out;
+	// animation-iteration-count: infinite;
+	transform-origin: 70% 0;
+}
+@keyframes t-hover {
+	0%, 100% {
+		transform: scale(1, 1);
+	}
+
+	21% {
+		transform: scale(1.05, 0.995);
+	}
+
+	50% {
+		transform: scale(0.99, 1.02);
+	}
+}
+
+@keyframes t-arrow {
+	0% {
+		transform: translateY(0)
+	}
+
+	50% {
+		transform: translateY(-0.5rem)
+	}
+
+	55% {
+		transform: translateY(-0.5rem)
+	}
+
+	100% {
+		transform: translateY(0)
+	}
+}
+
+@keyframes bounce {
+	from, 20%, 40%, 60%, 80%, to {
+		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	}
+
+	0% {
+		transform: scale3d(1.1, 1.1, 1.1);
+	}
+
+	20% {
+		transform: scale3d(.9, .9, .9);
+	}
+
+	50% {
+
+		transform: scale3d(1.03, 1.03, 1.03);
+	}
+
+	80% {
+		transform: scale3d(.97, .97, .97);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
 }
 
 
 @media (max-width: $screen-xs-max) {
-  .c-portfolio__svg {
-    max-width: 52vw;
-  }
-  .c-portfolio__2gis .img-responsive, .c-portfolio__sunturini .img-responsive {
-    margin-right: 3rem;
-  }
-  .c-portfolio__teplica .c-portfolio__svg, .c-portfolio__eantonova .c-portfolio__svg {
-    right: 30px;
-  }
+	.c-portfolio__svg {
+		max-width: 52vw;
+	}
+	.c-portfolio__2gis .img-responsive, .c-portfolio__sunturini .img-responsive {
+		margin-right: 3rem;
+	}
+	.c-portfolio__teplica .c-portfolio__svg, .c-portfolio__eantonova .c-portfolio__svg {
+		right: 30px;
+	}
 
 }
 
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-  .c-portfolio__2gis .img-responsive, .c-portfolio__sunturini .img-responsive, .c-portfolio__eantonova .c-portfolio__svg, .c-portfolio__teplica .c-portfolio__svg {
-    margin-right: 3rem;
-  }
-  .c-portfolio__teplica .c-portfolio__svg, .c-portfolio__eantonova .c-portfolio__svg {
-    right: 0;
-  }
+	.c-portfolio__2gis .img-responsive, .c-portfolio__sunturini .img-responsive, .c-portfolio__eantonova .c-portfolio__svg, .c-portfolio__teplica .c-portfolio__svg {
+		margin-right: 3rem;
+	}
+	.c-portfolio__teplica .c-portfolio__svg, .c-portfolio__eantonova .c-portfolio__svg {
+		right: 0;
+	}
 }
 
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {

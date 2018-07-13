@@ -1,7 +1,7 @@
 var jQuery = require('jquery'),
     scroll= require('wowjs'),
     Typed = require('typed.js'),
-    Jelly = require('jelly.js');
+    Vivus = require('vivus');
 
 require('jquery.easing');
 require('fullpage.js');
@@ -16,9 +16,10 @@ jQuery(function(){
         //= my/menu.js
         //= my/map.js
         //= my/tab.js
-        //= my/jelly.js
-        //= my/paralax.js
+        //= my/top.js
+        //preloader page
         //= my/mail.js
+        //= my/vivus.js
     });
 
 });

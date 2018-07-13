@@ -19,7 +19,7 @@ $('.c-footer__link,.c-footer-small__link').hover(
         }
     );
 
-$('.js-proekt').hover(
+$('svg').hover(
     function() {
     $(this).parents('.c-portfolio__body').addClass('hover');
 },
@@ -41,19 +41,7 @@ $('.c-projects__item').hover(
         setTimeout(deleted, 500);
     }
 );
- //animated page about
-if (typeof TimelineMax == 'function') {
-    var paths = $('path:not(defs path)');
-    paths.each(function (i, e) {
-        e.style.strokeDasharray = e.style.strokeDashoffset = e.getTotalLength();
-    });
-    var tl = new TimelineMax();
-    tl.add([
-        TweenLite.to(paths.eq(0), 1, {strokeDashoffset: 0, delay: 1}),
-        TweenLite.to(paths.eq(1), 1, {strokeDashoffset: 0, delay: 0.5}),
-        TweenLite.to(paths.eq(2), 1, {strokeDashoffset: 0, delay: 1})
-    ]);
-}
+
 
 function T(element, e, H) {
     var i = Math.pow(2 * e - 1, 3) * H * .125,
@@ -85,7 +73,6 @@ var Visible = function (target) {
 var elements = document.querySelectorAll('.js-animated-head');
 for (var i = 0; i < elements.length; i++) {
     var element = elements[i];
-// А также запустим функцию сразу. А то вдруг, элемент изначально видно
     Visible (element);
 }
 window.addEventListener('scroll', function() {

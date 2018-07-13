@@ -67,6 +67,10 @@
       bottom: 15vh;
     }
     &.icon-lamp {
+      .icon-lamp {
+        position: static;
+      }
+      .lamp {stroke-width:2}
       right: 50%;
       top: 5vh;
     }
@@ -75,7 +79,12 @@
       left: 3%;
     }
     &.icon-pencil {
+      .icon-pencil  {
+        position: static;
+      }
+      .pencil0, .pencil0  {stroke-width:2}
       bottom: 10vh;
+
       left: 10%;
     }
 

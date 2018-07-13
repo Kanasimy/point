@@ -1,77 +1,77 @@
 .c-contacts {
-  position: relative;
-  &-header{
-    top:-4rem;
-    right: 0;
-    z-index: 0;
-  }
-  &__wrapper {
-    position:relative;
-  }
-  &__map {
-    height:60vh;
-    margin-bottom: 10vh;
-  }
+	position: relative;
+	&-header{
+		top:-4rem;
+		right: 0;
+		z-index: 0;
+	}
+	&__wrapper {
+		position:relative;
+	}
+	&__map {
+		height:60vh;
+		margin-bottom: 10vh;
+	}
 
-  &__info {
-    background: #fff;
-    position: absolute;
-    right: 70px;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 70px;
-    font-size: px-to-rem(31);
-  }
+	&__info {
+		background: #fff;
+		position: absolute;
+		right: 70px;
+		top: 50%;
+		transform: translateY(-50%);
+		padding: 70px;
+		font-size: px-to-rem(31);
+	}
 
-  &__text {
-    display: inline-block;
-    margin-left:1rem;
-  }
+	&__text {
+		display: inline-block;
+		margin-left:1rem;
+	}
 
-  &__icon {
+	&__icon {
 
-  }
-  &__p{
-    display: flex;
-    align-items: center;
-  }
-  &__tabs {
-    text-align: center;
-    margin:2rem 0;
-  }
-  &__tab {
-    display: inline-block;
-    font-size: px-to-rem(31);
-    color:$blue;
-    border-radius: 2rem;
-    line-height: 1;
-    padding: 0.5rem 1rem;
-    margin: 1rem;
-    z-index: 100;
-    position: relative;
-    &.active {
-      background: $yellow;
-      color: #ffffff;
-      text-decoration: none;
-      position: relative;
-      &::after{
-        content: '';
-        border: 0.5rem solid transparent;
-        border-top: 0.5rem solid $yellow;
-        position: absolute;
-        bottom: -1rem;
-        left: 50%;
-        margin-left: -0.5rem;
-      }
-      &:hover {
-        background: $yellow;
-        color:#ffffff;
-      }
-    }
-    &:hover {
-      background: rgba(0,194,255, .17);
-      color: $blue;
-      text-decoration: none;
-    }
-  }
+	}
+	&__p{
+		display: flex;
+		align-items: center;
+	}
+	&__tabs {
+		text-align: center;
+		margin:2rem 0;
+	}
+	&__tab {
+		display: inline-block;
+		font-size: px-to-rem(31);
+		color:$blue;
+		border-radius: 2rem;
+		line-height: 1;
+		padding: 0.5rem 1rem;
+		margin: 1rem;
+		z-index: 100;
+		position: relative;
+		&.active {
+			background: $yellow;
+			color: #ffffff;
+			text-decoration: none;
+			position: relative;
+			&::after{
+				content: '';
+				border: 0.5rem solid transparent;
+				border-top: 0.5rem solid $yellow;
+				position: absolute;
+				bottom: -1rem;
+				left: 50%;
+				margin-left: -0.5rem;
+			}
+			&:hover {
+				background: $yellow;
+				color:#ffffff;
+			}
+		}
+		&:hover {
+			background: rgba(0,194,255, .17);
+			color: $blue;
+			text-decoration: none;
+		}
+	}
 }

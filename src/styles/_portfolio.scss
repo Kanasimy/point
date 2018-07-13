@@ -1,0 +1,66 @@
+.portfolio {
+  &__content {
+    text-align: center;
+    .img-responsive {
+      margin: 1rem 0;
+    }
+    .sketch {
+      position: relative;
+      .img-responsive {
+        margin: 0 auto;
+      }
+      p {
+        position: absolute;
+        position: absolute;
+        bottom: 10%;
+        left: 0;
+        right: 0;
+      }
+    }
+
+  }
+  &__line {
+    @include clearfix;
+  }
+  &__top {
+    position: relative;
+    .portfolio__logo {
+      position: absolute;
+      top: 10%;
+      right: 10%;
+      text-align: center;
+    }
+  }
+
+  &__teplica {
+    background: url(images/sheet_left.png) no-repeat 30px left, url(images/sheet_left.png) no-repeat 30px right;
+    .big-header__text {
+      position:static;
+      color: #e9ede8;
+      &.client {
+        .icon-pumpkin {
+          position: absolute;
+          right: -50%;
+          bottom:-50%;
+        }
+      }
+    }
+    .portfolio__what {
+      position: relative;
+      padding:2rem 0;
+      background: #ffffff;
+      .icon-sheet {
+        top:-2rem;
+      }
+    }
+    .portfolio__do {
+      position: relative;
+      padding:1rem 0 10rem;
+      background: #ffffff;
+      .icon-sheet {
+        bottom:-2rem;
+        right: 1rem;
+      }
+    }
+  }
+}
