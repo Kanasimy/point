@@ -1,3 +1,4 @@
+global.jQuery = require('jquery');
 var jQuery = require('jquery'),
     scroll= require('wowjs'),
     Typed = require('typed.js'),
@@ -5,6 +6,7 @@ var jQuery = require('jquery'),
 
 require('jquery.easing');
 require('fullpage.js');
+require('owl.carousel');
 
 jQuery(function(){
     var $ = jQuery;
@@ -17,11 +19,12 @@ jQuery(function(){
         //= my/map.js
         //= my/tab.js
         //= my/top.js
+        //= my/owl.js
         //preloader page
         //= my/mail.js
         //= my/vivus.js
+        //= my/video.js
     });
-
 });
 
 

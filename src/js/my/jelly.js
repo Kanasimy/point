@@ -159,7 +159,7 @@
    jellyBorn(baseOption);
     if(document.body.classList.contains('prelader')){
         setTimeout(function(){
-            location.href = '/new/izbrannoe.html';
+            location.href = '/izbrannoe.html';
         }, 10000);
     }
 })();

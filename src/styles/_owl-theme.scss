@@ -1,0 +1,26 @@
+.owl-carousel .owl-nav button.owl-prev {
+  @include sprite($arrow-left);
+  position:absolute;
+  left:-104px;
+}
+
+.owl-carousel .owl-nav button.owl-next {
+  @include sprite($arrow-right_);
+  position:absolute;
+  right:-104px;
+}
+
+.owl-carousel .owl-nav {
+  position:absolute;
+  top:30%;
+  left:0;
+  right:0;
+}
+
+.owl-carousel .owl-nav button.owl-prev:active,
+.owl-carousel .owl-nav button.owl-next:active,
+.owl-carousel .owl-nav button.owl-prev:focus,
+.owl-carousel .owl-nav button.owl-next:focus
+{
+  outline: none;
+}

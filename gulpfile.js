@@ -26,16 +26,16 @@ var gulp = require('gulp'),
 
 var path = {
     build: {
-        html: 'build/new',
-        portfolio: 'build/new/portfolio/',
-        js: 'build/new/js/',
+        html: 'build',
+        portfolio: 'build/portfolio/',
+        js: 'build/js/',
         jsFile: 'main.js',
         jsInit: 'init.js',
-        css: 'build/new/css/',
+        css: 'build/css/',
         cssMapDir: "/map/",
-        img: 'build/new/images/',
-        svg: 'build/new/images/svg/sprite.svg',
-        fonts: 'build/new/fonts/'
+        img: 'build/images/',
+        svg: 'build/images/svg/sprite.svg',
+        fonts: 'build/fonts/'
     },
     src: {
         html: 'src/*.html',
@@ -67,7 +67,7 @@ var config = {
     },
     tunnel: true,
     host: 'localhost',
-    port: 3000,
+    port: 9000,
     logPrefix: "olga_yuzich"
 };
 
@@ -185,7 +185,7 @@ gulp.task('svgSprite:build', function () {
                 }
             }
         }))
-        .pipe(gulp.dest('build/images/'));
+        .pipe(gulp.dest(path.build.img));
 });
 
 gulp.task('pngSprite:build', function() {
@@ -210,7 +210,7 @@ gulp.task('svgImages:build', function () {
                 }
             }
         }))
-        .pipe(gulp.dest('build/images/'));
+        .pipe(gulp.dest(path.build.img));
 });
 
 gulp.task('build', [
@@ -243,9 +243,9 @@ gulp.task('watch', function(){
         gulp.start('js-mini:build');
     });
 
-    watch([path.watch.img], function(event, cb) {
-        gulp.start('image:build');
-    });
+     watch([path.watch.img], function(event, cb) {
+         gulp.start('image:build');
+     });
     watch([path.watch.fonts], function(event, cb) {
         gulp.start('fonts:build');
     })
@@ -259,3 +259,4 @@ gulp.task('watch', function(){
 
 
 gulp.task('default', ['build', 'webserver', 'watch']);
+//gulp.task('default', ['build', 'watch']);

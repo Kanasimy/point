@@ -1,4 +1,69 @@
 .portfolio {
+  .img-centred {
+    text-align: center;
+    max-width:100%;
+  }
+  video.play {
+    cursor: url('../images/play.png'), pointer;
+  }
+  video.pause {
+    cursor: url('../images/pause.png'), pointer;
+  }
+  .logo-teplica {
+    background-image: url('../images/portfolio/logo-teplica.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 395px;
+    padding-bottom: 17%;
+    text-indent: 99999px;
+    @media (max-width: #{$container-tablet}) {
+      width: 80%;
+      margin:0 10%;
+    }
+  }
+  .logo-sunturini {
+    background-image: url('../images/portfolio/logo-sunturini.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 423px;
+    padding-bottom: 37%;
+    text-indent: 99999px;
+    @media (max-width: #{$container-tablet}) {
+      width: 57%;
+      margin: 13% 48%;
+    }
+  }
+
+  .logo-antonova {
+    background-image: url('../images/portfolio/logo-antonova.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    max-width: 324px;
+    width:30%;
+    padding-bottom: 25%;
+    font-size: 0;
+    display: inline-block;
+    @media (max-width: #{$container-desktop}) {
+      width:40%;
+      padding-bottom: 35%;
+    }
+  }
+
+  .logo-tree {
+    background-image: url('../images/portfolio/logo-tree.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    max-width: 177px;
+    width:30%;
+    padding-bottom: 32%;
+    font-size: 0;
+    display: inline-block;
+    @media (max-width: #{$container-desktop}) {
+      width: 20%;
+      padding-bottom: 35%;
+    }
+  }
+
   &__content {
     text-align: center;
     .img-responsive {
@@ -10,7 +75,6 @@
         margin: 0 auto;
       }
       p {
-        position: absolute;
         position: absolute;
         bottom: 10%;
         left: 0;
@@ -28,12 +92,43 @@
       position: absolute;
       top: 10%;
       right: 10%;
+      @media (max-width: #{$container-tablet}) {
+        left:0%;
+      }
       text-align: center;
+      @media (max-width: #{$container-tablet}) {
+        position: absolute;
+        top: 10%;
+      }
     }
   }
 
   &__teplica {
-    background: url(images/sheet_left.png) no-repeat 30px left, url(images/sheet_left.png) no-repeat 30px right;
+    &__content {
+      z-index: 0;
+      position: relative;
+    }
+    &__left {
+      z-index: 10;
+      background: url(../images/portfolio/sheet-left.png) 0% 0 no-repeat;
+      background-size: contain;
+      width:14vw;
+      height: 100%;
+      position: absolute;
+      top:70rem;
+    }
+    &__right {
+      z-index: 10;
+      background: url(../images/portfolio/sheet-right.png) 100% 0 no-repeat;
+      background-size: contain;
+      width:14vw;
+      height: 100%;
+      position: absolute;
+      top:27rem;
+      right:0%;
+    }
+
+
     .big-header__text {
       position:static;
       color: #e9ede8;
@@ -49,18 +144,699 @@
       position: relative;
       padding:2rem 0;
       background: #ffffff;
+      @media (max-width: #{$container-tablet}) {
+        background: transparent;
+      }
       .icon-sheet {
-        top:-2rem;
+        top:-3rem;
       }
     }
     .portfolio__do {
       position: relative;
-      padding:1rem 0 10rem;
+      padding: 1rem 1rem 10rem 1rem;
+      background: #fff;
+      margin-top: -1rem;
       background: #ffffff;
+      @media (max-width: #{$container-tablet}) {
+        background: transparent;
+      }
       .icon-sheet {
-        bottom:-2rem;
-        right: 1rem;
+        bottom: 5rem;
+        right: 2rem;
+        top: auto;
       }
     }
+    .portfolio__idea {
+      position: relative;
+      padding: 1rem 0 1rem;
+      background: #ffffff;
+      @media (max-width: #{$container-tablet}) {
+        background: transparent;
+      }
+      z-index: 100;
+      .icon-sheet {
+        right: auto;
+        bottom: -3rem;
+        left: -4rem;
+        top: auto;
+      }
+    }
+  }
+
+  &__pnp {
+    overflow: hidden;
+    &__content {
+      z-index: 0;
+      position: relative;
+    }
+    .big-header__text {
+      position:static;
+      color: #e9ede8;
+      &.client {
+
+      }
+    }
+    .portfolio__text {
+      position: relative;
+      .icon-ice-v {
+        left:-4rem;
+      }
+    }
+    .portfolio__what {
+      position: relative;
+      padding:4rem 0;
+      &__text{
+        background: #ffffff;
+        padding:2rem;
+        display: block;
+        z-index: 10;
+        position:relative;
+        top: 7rem;
+        left: 2rem;
+      }
+      &__yellow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        max-width: 100%;
+      }
+      .icon-ice-v {
+        top: -4rem;
+        right: 0;
+      }
+
+      @media (max-width: #{$container-tablet}) {
+        background: transparent;
+      }
+
+    }
+    .portfolio__do {
+      position: relative;
+      padding: 1rem 1rem 10rem 1rem;
+      background: #fff;
+      margin-top: -2rem;
+      background: #ffffff;
+      .icon-ice-v {
+        transform: rotate(-46deg);
+        bottom: 3rem;
+        left: -5rem;
+      }
+      @media (max-width: #{$container-tablet}) {
+        background: transparent;
+      }
+    }
+    .portfolio__idea {
+      position: absolute;
+      padding: 1rem 0 1rem;
+      background: #ffffff;
+      top: -17rem;
+      right:-3rem;
+      &__violet {
+        position:absolute;
+        bottom:0;
+        right:-250px;
+      }
+      .icon-ice-y {
+        bottom: -4rem;
+        left:-4rem;
+      }
+      @media (max-width: #{$container-tablet}) {
+        background: transparent;
+      }
+      z-index: 100;
+    }
+    .big-header__text_idea {
+      padding-bottom: 13rem;
+    }
+    .portfolio__sketch {
+      position: relative;
+      .icon-ice-y{
+        right: -3rem;
+        bottom: 4rem;
+        transform: rotate(79deg);
+      }
+      .icon-ice-v{
+        right: -10rem;
+        bottom: 8rem;
+        -webkit-transform: rotate(46deg);
+        transform: rotate(18deg);
+        &.left {
+          left: -10rem;
+          top: 4rem;
+          transform: rotate(-40deg);
+        }
+      }
+    }
+    .owl-carousel .owl-nav button.owl-prev {
+      @include sprite($arrow-left-pnp);
+    }
+
+    .owl-carousel .owl-nav button.owl-next {
+      @include sprite($arrow-right-pnp);
+    }
+  }
+
+  &__sunturini {
+    .icon {
+      @media (max-width: #{$container-desktop}) {
+        transform: scale(.8);
+      }}
+    &__content {
+      z-index: 0;
+      position: relative;
+      .portfolio__top {
+        &__left {
+          width: 32%;
+          top: 3px;
+          left: -32%;
+          position:absolute}
+        &__right {
+          width: 32%;
+          top: 2px;
+          right: -32%;
+          position:absolute}
+      }
+      .portfolio__logo {
+        top: 34%;
+        right: 17%;
+        @media (max-width: #{$container-desktop}) {
+          top: 14%;
+        }
+      }
+    }
+    .big-header__text {
+      position:static;
+      color: #e9ede8;
+      &.client {
+
+      }
+    }
+    .portfolio__what {
+      position: relative;
+      padding: 1rem 2rem 1rem 2rem;
+      margin: -2rem 0 2rem;
+      background: $blue;
+      color:#ffffff;
+      .icon-elips-blue {
+        top: -7rem;
+        left: -10rem;
+      }
+      .icon-bag {
+        right: 0;
+        bottom: -3rem;
+        @media (max-width: #{$container-tablet}) {
+          transform: scale(0.7);
+        }
+      }
+      .icon-star {
+        top: -4rem;
+        left: 1rem;
+      }
+      @media (max-width: #{$container-tablet}) {
+        margin: 0rem 0 2rem;
+        .icon-star {
+          top: -3rem;
+          left: -3rem;
+        }
+      }
+    }
+    .portfolio__do {
+      position: relative;
+      padding: 1rem 2rem 1rem 2rem;
+      margin: -3rem 0 2rem;
+      background: #fccf00;
+      margin-top: -1rem;
+      color:#ffffff;
+      z-index: 10;
+      .icon-sun {
+        left: -3rem;
+        bottom: 1rem;
+      }
+      .icon-photos {
+        right: 1rem;
+        top: -3rem;
+      }
+      @media (max-width: #{$container-tablet}) {
+        margin: 0rem 0 2rem;
+      }
+    }
+    .portfolio__do + .icon-elips-blue {
+      right: -2rem;
+      bottom: -2rem;
+      transform: rotate(-43deg);
+      @media (max-width: #{$container-desktop}) {
+        transform: scale(.8) rotate(-43deg);
+      }
+      z-index:0;
+    }
+    .portfolio__idea {
+      position: relative;
+      padding: 1rem 2rem 1rem 2rem;
+      margin: -2rem 0 2rem;
+      background: $blue;
+      color:#ffffff;
+      z-index:10;
+
+      .icon-tikets {
+        top:-3rem;
+        left:-3rem;
+      }
+      @media (max-width: #{$container-tablet}) {
+        margin: 0rem 0 2rem;
+      }
+      z-index: 100;
+    }
+    .portfolio__idea + .icon-elips-blue {
+      right: -2rem;
+      bottom: 50%;
+      transform: rotate(-72deg);
+      @media (max-width: #{$container-desktop}) {
+        transform: scale(.8) rotate(-72deg);
+      }
+      z-index:0;
+    }
+    .portfolio__line {
+      .icon-elips-green-yellow {
+        left: 8rem;
+        top: -5rem;
+        z-index:0;
+      }
+      @media (max-width: #{$container-desktop}){
+      .icon-elips-green-yellow {
+        left: 12rem;
+        top: -3rem;
+      }
+    }
+    }
+    .portfolio__idea + .icon-elips-blue {
+      right: -2rem;
+      bottom: 50%;
+      transform: rotate(-43deg);
+      @media (max-width: #{$container-desktop}) {
+        transform: scale(.8) rotate(-43deg);
+      }
+      z-index:0;
+    }
+    &__bag {
+      position: relative;
+      .icon-elips-blue-border {
+        left: -6rem;
+        bottom:-4rem
+      }
+      .icon-elips-yellow-border {
+        right: -6rem;
+        top:50%;
+      }
+    }
+    &__font {
+      position: relative;
+      .icon-elips-blue-border {
+        right: -6rem;
+        top:-4rem;
+      }
+      .icon-elips-yellow-border {
+        left: -6rem;
+        bottom: -4rem;
+      }
+    }
+    .owl-carousel .owl-nav button.owl-prev {
+      @include sprite($arrow-left-sunturini);
+    }
+
+    .owl-carousel .owl-nav button.owl-next {
+      @include sprite($arrow-right-sunturini);
+    }
+
+    .portfolio__sunturini__sun {
+      position: absolute;
+      left:0;
+      top:100%;
+      @media (max-width: #{$container-large-desktop}) {
+        transform: scale(.7);
+        left:-30px;
+      }
+      @media (max-width: #{$container-desktop}) {
+        display:none;
+      }
+    }
+    .portfolio__sunturini__star {
+      position: absolute;
+      right:0;
+      top:80%;
+      @media (max-width: #{$container-large-desktop}) {
+        transform: scale(.7);
+        top:70%;
+        right:-30px;
+      }
+      @media (max-width: #{$container-desktop}) {
+        display:none;
+      }
+    }
+  }
+
+  &__antonova {
+    overflow: hidden;
+    .icon {
+      @media (max-width: #{$container-desktop}) {
+        transform: scale(.8);
+      }
+      @media (max-width: #{$container-tablet}) {
+      transform: scale(0.5);
+      }
+    }
+    &__content {
+      z-index: 0;
+      position: relative;
+      .portfolio__top {margin-bottom: 7rem;}
+      .portfolio__logo {
+        top: 5%;
+        right:0%;
+        width: 100%;
+        text-align: center;
+        span {display: block}
+        @media (max-width: #{$container-tablet}) {
+          top:0%;
+          span {display:none}
+        }
+      }
+    }
+    .big-header__text {
+      position:static;
+      color: #e9ede8;
+    }
+    .portfolio__what {
+      position: relative;
+      padding: 1rem 2rem 1rem 2rem;
+      margin: -2rem 0 2rem;
+      background: #fff;
+      .icon-a-star {
+        top: -9rem;
+        left: 0;
+      }
+      @media (max-width: #{$container-tablet}) {
+        margin: 0rem 0 2rem;
+      }
+    }
+    .icon-book {
+      left: -12.5rem;
+      top: -10rem;
+      @media (max-width: #{$container-tablet}) {
+      left: 0;
+      top: -16rem;
+      }
+    }
+    .icon-clock {
+      right: -13rem;
+      bottom: -8rem;
+      @media (max-width: #{$container-tablet}) {
+        right: 17%;
+        bottom: 5rem;
+      }
+    }
+    .icon-tooltip {
+      bottom: -7rem;
+      left: 5rem;
+      @media (max-width: #{$container-tablet}) {
+          bottom: 0;
+          left: 50%;
+      }
+    }
+    .icon-star-green {
+      right: -8rem;
+      top: -8rem;
+      @media (max-width: #{$container-tablet}) {
+        right: 0;
+        top: 0;
+      }
+    }
+    .icon-b {
+      left: 55%;
+      bottom: -9rem;
+    }
+    .icon-stars {
+      top: -4rem;
+      left: 5rem;
+    }
+    .icon-pen-green {
+      right: -6rem;
+      top: -1rem;
+    }
+
+    .icon-ruler {
+      left: -1rem;
+      top: 3rem;
+      @media (max-width: #{$container-tablet}) {
+        left: 50%;
+        top: 1rem;
+      }
+    }
+
+    .icon-a {
+      right: -7rem;
+      top: 1rem;
+      left: auto;
+    }
+    .icon-lamp-green {
+      bottom: -6rem;
+      left: -1rem;
+    }
+    .icon-c {
+      bottom: -18rem;
+      left: -8rem;
+    }
+    .icon-earth {
+      top: -8rem;
+      left: -4rem;
+      @media (max-width: #{$container-tablet}) {
+          top: -11rem;
+          left: -4rem;
+      }
+    }
+
+    .img-responsive.style {
+      margin-left: 17%;  }
+
+    .portfolio__line {
+      z-index: 10;
+      position: relative;
+    }
+    portfolio__line.do {
+      z-index: 0;
+    }
+    .portfolio__do {
+      position: relative;
+      padding: 1rem 2rem 1rem 2rem;
+      margin: -3rem 0 2rem;
+      background: #fff;
+      margin-top: -1rem;
+      z-index: 10;
+      .icon-a-star {
+        right: 0;
+        left: auto;
+        top: auto;
+        bottom: 8rem;
+      }
+      @media (max-width: #{$container-tablet}) {
+        margin: 0rem 0 2rem;
+      }
+    }
+    .icon-cubok {
+      left: 42%;
+      top: 10rem;
+      @media (max-width: #{$container-tablet}) {
+          left: 42%;
+          top: auto;
+          bottom: -1rem;
+      }
+    }
+    .icon-lighting {
+      right: -2rem;
+      @media (max-width: #{$container-tablet}) {
+        right: 0;
+        bottom: -20rem;
+      }
+    }
+    .portfolio__idea {
+      position: relative;
+      padding: 1rem 2rem 1rem 2rem;
+      margin: -2rem 0 2rem;
+      background: #fff;
+      z-index:10;
+      .icon-a-star {
+        right: 0rem;
+        top: 7rem;
+      }
+      @media (max-width: #{$container-tablet}) {
+        margin: 0rem 0 2rem;
+      }
+      z-index: 100;
+    }
+
+    .owl-carousel .owl-nav button.owl-prev {
+      @include sprite($arrow-left-antonova);
+    }
+
+    .owl-carousel .owl-nav button.owl-next {
+      @include sprite($arrow-right-antonova);
+    }
+
+    .owl-carousel button.owl-dot {
+      background: #3d6d2f;
+      width: 15px;
+      height:15px;
+      border-radius: 7px;
+      color: inherit;
+      border: none;
+      padding: 0 !important;
+      font: inherit;
+      text-indent: 0;
+      overflow: hidden;
+      margin:1rem 0.5rem;
+    }
+    .owl-carousel button:active, .owl-carousel button:focus {
+      outline: none;
+    }
+    .owl-carousel button.owl-dot.active {
+      background: #a1251a;
+    }
+
+  }
+
+  &__tree {
+    p { padding: 18px 0;}
+    overflow: hidden;
+    .icon {
+      @media (max-width: #{$container-desktop}) {
+        transform: scale(.8);
+      }
+      @media (max-width: #{$container-tablet}) {
+        transform: scale(0.5);
+      }
+    }
+    &__pattern {
+      position: relative;
+      .img-fon {
+        position: absolute;
+        top: -21%;
+        right: -23%;
+        width: 45%;
+        z-index: 0;
+      }
+      .img-responsive {
+        position: relative;
+        z-index: 10;
+      }
+    }
+
+    &__font {
+      position: relative;
+      .img-fon {
+        position: absolute;
+        top: 44.85%;
+        right: -25.4%;
+        width: 25.4%;
+        z-index: 0;
+      }
+      .img-responsive {
+        position: relative;
+        z-index: 10;
+      }
+    }
+
+    &__content {
+      z-index: 0;
+      position: relative;
+      .portfolio__top {margin-bottom: 7rem;}
+      .portfolio__tree {
+        .icon-gear3 {
+          top: 16rem;
+          left: 1rem;
+        }
+      }
+      .portfolio__logo {
+        top: 7%;
+        left:15%;
+        width: 100%;
+        text-align: left;
+        @media (max-width: #{$container-desktop}) {
+          top: 7%;
+          left: 0;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+    .big-header__text {
+      position:static;
+      color: #e9ede8;
+    }
+    .portfolio__what {
+      position: relative;
+      padding: 1rem 2rem 1rem 2rem;
+      margin: -2rem 0 4rem;
+      background: #fff;
+      .icon-a-star {
+        top: -9rem;
+        left: 0;
+      }
+      @media (max-width: #{$container-tablet}) {
+        margin: 0rem 0 2rem;
+      }
+    }
+
+    .img-responsive.style {
+      margin-left: 17%;  }
+
+    .portfolio__line {
+      z-index: 10;
+      position: relative;
+    }
+    portfolio__line.do {
+      z-index: 0;
+    }
+    .portfolio__do {
+      position: relative;
+      padding: 1rem 2rem 1rem 2rem;
+      margin: -1rem 0 10rem;
+      background: #fff;
+      box-shadow: 0 0 10px #ffffff;
+      z-index: 10;
+      @media (max-width: #{$container-tablet}) {
+        margin: 0rem 0 2rem;
+      }
+    }
+
+    .portfolio__idea {
+      position: relative;
+      padding: 1rem 2rem 1rem 2rem;
+      margin: -2rem 0 10rem;
+      background: #fff;
+      z-index:0;
+      .icon-a-star {
+        right: 0rem;
+        top: 7rem;
+      }
+      @media (max-width: #{$container-tablet}) {
+        margin: 0rem 0 2rem;
+      }
+      z-index: 100;
+    }
+
+    .owl-carousel .owl-nav button.owl-prev {
+      @include sprite($arrow-left-tree);
+    }
+
+    .owl-carousel .owl-nav button.owl-next {
+      @include sprite($arrow-right-tree);
+    }
+
+    .owl-carousel button:active, .owl-carousel button:focus {
+      outline: none;
+    }
+    .owl-carousel button.owl-dot.active {
+      background: #a1251a;
+    }
+
   }
 }

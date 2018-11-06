@@ -74,8 +74,9 @@
 				transform: rotate(-9.2deg) translate(-31px,37px);
 				animation: t-hover 1.7s infinite ease;
 			}
+			//fixme расскоментировать для анимации
 			.js-proekt{
-				opacity: 0;
+				//opacity: 0;
 			}
 		}
 
@@ -89,7 +90,7 @@
 				transform: scale(1);
 			}
 			.js-proekt{
-				opacity: 0;
+				//opacity: 0;
 			}
 
 			.teplica-cls-2_0,  .teplica-cls-2_3{transform: translate(10px, -5px);}
@@ -239,7 +240,7 @@
 			vertical-align: middle;
 			position:absolute;
 			left: 10%;
-			top: 18%;
+			top: 9%;
 			transition-property: left;
 			transition-duration: 0.2s;
 			transition-timing-function: ease-in-out;
@@ -319,8 +320,8 @@
 		opacity: 1;
 	}
 }
-
-.c-portfolio__teplica .c-portfolio__body .moving {
+//fixme убрать подчеркивание для анимации
+.c-portfolio__teplica .c-portfolio__body .moving_ {
 	animation-name:moving;
 	animation-duration: 0.5s;
 	animation-timing-function: ease-out;
@@ -330,7 +331,7 @@
 	animation-fill-mode: forwards;
 }
 
-.c-portfolio__teplica .c-portfolio__body.hover .moving {
+.c-portfolio__teplica .c-portfolio__body.hover .moving_ {
 	opacity: 1;
 	transition-duration: 0.5s;
 }
@@ -456,3 +457,24 @@
 
 }
 
+.teplica-name {
+	transform: translate(-5px, -11px);
+}
+.teplica-about {
+	transform: translate(0, 9px);
+}
+#sunt {
+	transform: translate(122px, 10px);
+}
+#lang {
+	transform: translate(45px, 72px);
+}
+.lang-about {
+	transform: translate(45px, 32px);
+}
+rect.eantonova-cls-2_3 {
+	transform: translate(0, -20px);
+}
+.two-gis__about {
+	transform: translate(-99px, 14px);
+}

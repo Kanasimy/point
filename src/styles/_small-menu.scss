@@ -6,6 +6,10 @@
   width:70px;
   text-align: center;
   cursor:pointer;
+  @media (max-width: 360px) {
+    transform: scale(.7);
+    top: 0;
+  }
   .icon-drop-blue, .icon-drop-black, .icon-drop-yellow {
     display:inline-block;
     position: relative;
@@ -34,4 +38,7 @@
   }
 }
 
-.small-menu-line {left:-70px; right:auto}
+.small-menu-line {
+  left:-70px;
+  right:auto;
+}

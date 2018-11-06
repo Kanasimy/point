@@ -160,10 +160,6 @@
   display: inline-block;
 }
 
-.logo-teplica {
-  @include sprite($logo-teplica);
-  text-indent: 9999px;
-}
 .icon-pumpkin {
   @include sprite($pumpkin);
   display: inline-block;
@@ -182,7 +178,7 @@
   @include sprite($eggplant);
   display: inline-block;
   position: absolute;
-  left:-20%;
+  left: -10rem;
 }
 
 .icon-chili {
@@ -197,20 +193,218 @@
   @include sprite($money);
   display: inline-block;
   position: absolute;
-  right:-50%;
-  top:0
+  right: -7rem;
+  top: -4rem;
 }
 
 .icon-pumpkin_ {
   @include sprite($pumpkin_);
   display: inline-block;
   position: absolute;
-  left:-30%;
-  top:0
+  left: -6rem;
+  top: -6rem;
 }
 
 .icon-avocado {
   @include sprite($avokado);
   display: inline-block;
+  position: relative;
+  z-index: 0;
+  top: -2rem;
+  left: 71%;
+}
+
+.icon-ice-v {
+  @include sprite($ice-v);
+  display: inline-block;
+  position: absolute;
+}
+.icon-ice-y {
+  @include sprite($ice-y);
+  display: inline-block;
+  position: absolute;
+}
+
+.icon-a {
+  @include sprite($a);
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  top: -2rem;
+  left: 71%;
+}
+
+.icon-elips-blue {
+  @include sprite($elips-blue);
+  display: inline-block;
+  position: absolute;
+}
+.icon-elips-blue-border {
+  @include sprite($elips-blue-border);
+  display: inline-block;
+  position: absolute;
+}
+.icon-elips-green-yellow {
+  @include sprite($elips-green-yellow);
+  display: inline-block;
+  position: absolute;
+}
+.icon-elips-yellow-border {
+  @include sprite($elips-yellow-border);
+  display: inline-block;
+  position: absolute;
+}
+.icon-star {
+  @include sprite($star);
+  display: inline-block;
+  position: absolute;
+}
+.icon-sun {
+  @include sprite($sun);
+  display: inline-block;
+  position: absolute;
+}
+.icon-photos {
+  @include sprite($photos);
+  display: inline-block;
+  position: absolute;
+}
+.icon-tikets {
+  @include sprite($tikets);
+  display: inline-block;
+  position: absolute;
+}
+.icon-bag {
+  @include sprite($bag);
+  display: inline-block;
+  position: absolute;
+}
+.icon-a-star {
+  @include sprite($a-star);
+  display: inline-block;
+  position: absolute;}
+.icon-stars {
+  @include sprite($stars);
+  display: inline-block;
+  position: absolute;}
+.icon-star-green {
+  @include sprite($star-green);
+  display: inline-block;
+  position: absolute;}
+.icon-book {
+  @include sprite($book);
+  display: inline-block;
+  position: absolute;}
+.icon-b {
+  @include sprite($b);
+  display: inline-block;
+  position: absolute;}
+.icon-a {
+  @include sprite($a);
+  display: inline-block;
+  position: absolute;}
+.icon-clock {
+  @include sprite($clock);
+  display: inline-block;
+  position: absolute;}
+.icon-tooltip {
+  @include sprite($tooltip);
+  display: inline-block;
+  position: absolute;}
+.icon-cubok {
+  @include sprite($cubok);
+  display: inline-block;
+  position: absolute;}
+.icon-earth {
+  @include sprite($earth);
+  display: inline-block;
+  position: absolute;}
+.icon-pen-green {
+  @include sprite($pen-green);
+  display: inline-block;
+  position: absolute;}
+.icon-ruler {
+  @include sprite($ruler);
+  display: inline-block;
+  position: absolute;}
+.icon-lighting {
+  @include sprite($lighting);
+  display: inline-block;
+  position: absolute;}
+.icon-lamp-green {
+  @include sprite($lamp-green);
+  display: inline-block;
+  position: absolute;}
+.icon-c {
+  @include sprite($c);
+  display: inline-block;
+  position: absolute;}
+.icon-gear1{
+  @include sprite($gear1);
+  display: inline-block;
+  position: absolute;
+  top: -5rem;
+  left: -13rem;
+}
+.icon-gear2{
+  @include sprite($gear2);
+  display: inline-block;
+  position: absolute;
+  right: -12rem;
+  top: 6rem;
+}
+.icon-gear3{
+  @include sprite($gear3);
+  display: inline-block;
+  position: absolute;
+  left: -13rem;
+  top: -1rem;
+}
+.icon-gear4{
+  @include sprite($gear4);
+  display: inline-block;
+  position: absolute;
+  top: 3rem;
+  left: 10rem;
+}
+.icon-gear5{
+  @include sprite($gear5);
+  display: inline-block;
+  position: absolute;
+  top: -9rem;
+  left: -10rem;
+}
+.icon-gear6{
+  @include sprite($gear6);
+  display: inline-block;
+  position: absolute;
+  left: 1rem;
+  top: 10rem;
+}
+.icon-gear7{
+  @include sprite($gear7);
+  display: inline-block;
+  position: absolute;
+  right: -32px;
+  top: 2060px;
+}
+.icon-gear7.left {
+  right: auto;
+  top: 2300px;
+  left:-30px;
+}
+.icon-gear8{
+  @include sprite($gear8);
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 2500px;
+}
+.icon-gear9{
+  @include sprite($gear9);
+  display: inline-block;
+  position: absolute;
+  left: -11rem;
+  top: 54rem;
 }
 
